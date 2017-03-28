@@ -38,7 +38,7 @@
                     'depth'             => 2,
                     'container'         => 'div',
                     'container_class'   => 'collapse navbar-collapse mr-auto justify-content-end',
-            		    'container_id'      => 'header-menu',
+                    'container_id'      => 'header-menu',
                     'menu_class'        => 'navbar-nav',
                     'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
                     'walker'            => new wp_bootstrap_navwalker())

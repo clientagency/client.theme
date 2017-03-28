@@ -2,7 +2,9 @@
 <div class="col col-sm-6 col-lg-4 mb32 item" id="post-<?php the_ID(); ?>" >
 	
     <div class="loop-thumb text-center mb16">
+      <a href="<?php the_permalink(); ?>">
       <?php the_post_thumbnail( 'thumbnail', array( 'class' => 'img-fluid' ) ); ?>
+      </a>
     </div>
     
     <div class="post-content">
