@@ -6,27 +6,39 @@ jQuery(document).ready(function($) {
 	
 	$('.navbar-margin').css({'margin-top': $('.navbar.fixed-top').innerHeight()});  
 	
-	
+	$(".header").headroom();
+  
 	var $container = $('.masonry');
 	$container.imagesLoaded( function() { 
 		 $container.masonry({
-		 	itemSelector: '.item',
-			isAnimated: true,
-			  animationOptions: {
-				duration: 750,
-				easing: 'linear',
-				queue: false
-			  }
-			
+		 	itemSelector: '.item'
 		  });
 	});
-	
+  
+  // refresh after each img if using lazyloading
+  $container.each(function(){
+    var $module = $(this);
+
+    var update = (function(){
+        $module.masonry('layout');
+        //return true;
+    });
+
+    this.addEventListener('load', update, true);   
+  });
+  
+  
 	/* smooth scroll */
-	$('a[href*="#"]:not([href="#"])').click(function(event) { 
-		event.preventDefault();
-		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) { var target = $(this.hash); target = target.length ? target : $('[name=' + this.hash.slice(1) +']'); if (target.length) { $('html, body').animate({ scrollTop: target.offset().top -64 }, 800); return false; } } 
+	$('a[href*="#"]:not([href="#"])').on('click',function (e) {
+	    e.preventDefault();
+	    var target = this.hash;
+	    var $target = $(target);
+	    $('html, body').stop().animate({
+	        'scrollTop': $target.offset().top
+	    }, 900, 'swing', function () {
+	        window.location.hash = target;
+	    });
 	});
-	
 	
 	
 	setTimeout(function(){

@@ -3,10 +3,10 @@
 function client_setup() {
 	add_theme_support('post-thumbnails');
  	update_option('thumbnail_size_w', 480);
-	update_option('thumbnail_size_h', 300);
+	update_option('thumbnail_size_h', 0);
 	update_option('medium_size_w', 960);
 	update_option('medium_size_h', 0);
-	update_option('large_size_w', 1480);
+	update_option('large_size_w', 1600);
 	update_option('large_size_h', 0);
   	// rss thingy
   	add_theme_support('automatic-feed-links');
@@ -21,7 +21,7 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 /* Change Excerpt format */
 function client_excerpt_readmore() {
-	return '&nbsp; <a href="'. get_permalink() . '">' . '&hellip;' . __('Read more', 'client') . ' <i class="fa fa-angle-right" aria-hidden="true"></i>' . '</a>';
+	return '&nbsp; <a href="'. get_permalink() . '" class="read-more">' . '&hellip; ' . __('Read more', 'client') . ' <i class="fa fa-angle-right" aria-hidden="true"></i>' . '</a>';
 }
 add_filter('excerpt_more', 'client_excerpt_readmore');
 
@@ -48,7 +48,7 @@ add_action( 'pre_ping', 'disable_self_trackback' );
 
 // Browser detection body_class() output
 function client_browser_body_class( $classes ) {
-	global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
+	global $is_lynx, $is_gecko, $is_IE, $is_edge, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
 	
 	if($is_lynx) $classes[] = 'lynx';
 	elseif($is_gecko) $classes[] = 'gecko';
@@ -56,6 +56,7 @@ function client_browser_body_class( $classes ) {
 	elseif($is_NS4) $classes[] = 'ns4';
 	elseif($is_safari) $classes[] = 'safari';
 	elseif($is_chrome) $classes[] = 'chrome';
+	elseif($is_edge) $classes[] = 'edge';
 	elseif($is_IE) {
 		$browser = $_SERVER['HTTP_USER_AGENT'];
 		$browser = substr( "$browser", 25, 8);

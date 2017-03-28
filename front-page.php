@@ -18,23 +18,19 @@
 
 </main>   
 
-<div class="container mt-4">
-<div class="row">
+<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+<div class="container mt-4 mb-4">
+  <div class="row">
 
-	<div class="col col-md-8">
-	<article>
-	<p>
-	Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui.
+    <div class="col">
+    <article>
+      <?php the_content(); ?>
+      <?php edit_post_link(); ?>
+    </article>
+    </div>
 
-Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Nulla vitae elit libero, a pharetra augue. Curabitur blandit tempus porttitor. Sed posuere consectetur est at lobortis.
-
-Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Maecenas faucibus mollis interdum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
-	</p>
-	</article>
-	</div>
-
+  </div>
 </div>
-</div>
-
+<?php endwhile; endif; ?>
 
 <?php get_footer(); ?>

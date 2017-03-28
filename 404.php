@@ -2,16 +2,19 @@
 
 	<main role="main">
 		<section class="container">
-			<div class="row pt96 pb96"><div class="col-sm-12 text-center">
-			<article id="post-404">
+			
+			<div class="row pt160 pb160">
+        <div class="col-12 text-center">
+          <article id="post-404">
 
-				<h1><?php _e( 'Page missing', 'client' ); ?></h1>
-				<p>
-					<a href="<?php echo home_url(); ?>"><?php _e( 'Frontpage', 'client' ); ?></a>
-				</p>
+            <h1><?php _e( 'Page missing', 'client' ); ?></h1>
+            <p>
+              <a href="<?php echo home_url(); ?>"><?php _e( 'Return to frontpage', 'client' ); ?></a>
+            </p>
 
-			</article>
-			</div></div>
+          </article>
+        </div>
+      </div>
             
 		</section>
 	</main>

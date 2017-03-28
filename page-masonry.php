@@ -10,14 +10,12 @@ get_header(); ?>
 <div class="row masonry">
 
 <?php
-  // set up or arguments for our custom query
   $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
   $query_args = array(
     'post_type' => 'post',
     'posts_per_page' => 12,
     'paged' => $paged
   );
-  // create a new instance of WP_Query
   $the_query = new WP_Query( $query_args );
 ?>
 
@@ -27,11 +25,10 @@ get_header(); ?>
 
 <?php endwhile; ?>
 
-<?php
-      if (function_exists(custom_pagination)) { ?>
-	  </div><div class="row">
+<?php if (function_exists(custom_pagination)) { ?>
+	  </div>
+    <div class="row">
         <?php custom_pagination($the_query->max_num_pages,"",$paged); ?>
-      
       <?php } ?>
     
 <?php else: ?>

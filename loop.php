@@ -1,7 +1,8 @@
+
 <div class="col col-sm-6 col-lg-4 mb32 item" id="post-<?php the_ID(); ?>" >
 	
-    <div class="product-thumb text-center">
-    <?php the_post_thumbnail( 'medium', array( 'class' => 'img-responsive' ) ); ?>
+    <div class="loop-thumb text-center mb16">
+      <?php the_post_thumbnail( 'thumbnail', array( 'class' => 'img-fluid' ) ); ?>
     </div>
     
     <div class="post-content">
