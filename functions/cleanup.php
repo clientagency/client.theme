@@ -74,5 +74,3 @@ function strip_empty_classes($menu) {
 add_filter ('wp_nav_menu','strip_empty_classes');
 
 ?>
-
-
