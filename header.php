@@ -28,7 +28,7 @@
           </button>
           
           <a class="navbar-brand" href="<?php echo home_url(); ?>">
-            	<img src="<?php bloginfo( 'template_directory' ); ?>/img/logo.png" class="img-responsive" alt="<?php bloginfo( 'name' ); ?>">
+            	<img src="<?php echo esc_url( get_template_directory_uri() ) ?>/img/logo.png" class="img-responsive" alt="<?php bloginfo( 'name' ); ?>">
           </a>
       	 
            <?php

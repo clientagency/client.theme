@@ -1,6 +1,6 @@
 <div id="comments" class="comments">
 	<?php if (post_password_required()) : ?>
-	<p><?php _e( 'Post is password protected. Enter the password to view any comments.', 'html5blank' ); ?></p>
+	<p><?php _e( 'Post is password protected. Enter the password to view any comments.', 'client' ); ?></p>
 </div>
 
 	<?php return; endif; ?>

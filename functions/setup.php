@@ -1,4 +1,4 @@
-<?php
+s<?php
 
 function client_setup() {
 	add_theme_support('post-thumbnails');
@@ -8,8 +8,9 @@ function client_setup() {
 	update_option('medium_size_h', 0);
 	update_option('large_size_w', 1600);
 	update_option('large_size_h', 0);
-  	// rss thingy
-  	add_theme_support('automatic-feed-links');
+  // rss thingy
+  add_theme_support('automatic-feed-links');
+  add_theme_support( 'title-tag' );
 }
 add_action('init', 'client_setup');
 
