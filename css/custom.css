@@ -75,10 +75,6 @@ html, body {
 
 .debug { background: #ff0000; }
 
-.text-right { text-align: right;}
-
-.text-center { text-align: center; }
-
 .no-gutters {
   margin-right: 0;
   margin-left: 0;
@@ -303,6 +299,9 @@ input:focus { outline: 0; }
 /* Styles */
 /* -------------------------- */
 
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+
 img.alignright { padding: 4px; margin: 0 0 2px 14px; display: inline; }
 img.alignleft { padding: 4px; margin: 0 14px 2px 0; display: inline; }
 .alignright { float: right; }
@@ -317,6 +316,30 @@ img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
 .alignleft { float: left; }
 .aligncenter { display: block; margin-left: auto; margin-right: auto; }
 
+/* The Gallery container (div) */
+.gallery { }
+
+/* A Gallery item container,
+ for 3, 2 and 4 column galleries */
+.gallery .gallery-item { }
+.gallery-columns-2 .gallery-item { }
+.gallery-columns-4 .gallery-item { }
+
+/* The actual image inside a container
+for 3, 2 and 4 column galleries */
+.gallery img { }
+.gallery-columns-2 .attachment-medium { }
+.gallery-columns-4 .attachment-thumbnail { }
+
+/* A gallery image caption */
+.gallery .gallery-caption { }
+
+/* Definition lists elements */
+.gallery dl, .gallery dt { }
+
+/* Pick the second line break if two
+line breaks are adjacent */
+.gallery br+br { }
 
 /* -------------------------- */
 /* Menu */

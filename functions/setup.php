@@ -1,4 +1,4 @@
-s<?php
+<?php
 
 function client_setup() {
 	add_theme_support('post-thumbnails');
