@@ -1,4 +1,4 @@
-![Wyvern](img/logo.png)
+![Wyvern](img/admin_logo.png)
 
 ![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)
 
