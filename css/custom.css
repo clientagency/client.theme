@@ -163,7 +163,7 @@ h6
 
 h1 {
   font-size: 48px;
-  font-size: 2.667rem; 
+  font-size: 2.667rem; /* calc like 48/18 */
   margin-bottom: 14.85px;
   margin-bottom: 0.825rem;
 }
@@ -202,12 +202,21 @@ h5, h6 {
 
 }
 
-p, table, input, label, ul, ol, dl, dt, select, textarea, address {
+p, table, label, ul, ol, dl, dt, select, address {
 	font-size: 14px; 
 	font-size: 0.778rem;
 	margin-bottom: 14.85px;
   margin-bottom: 0.825rem;
 	line-height: 1.111rem;
+	color: #010101;
+}
+
+input, textarea, 
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"],
+.wpcf7 textarea {
+	font-size: 13px; 
+	font-size: 0.722rem;
 	color: #010101;
 }
 
@@ -219,7 +228,7 @@ p.large, p.lead { font-size: 0.889rem;}
 
 .footer p, .footer ul, .footer ol { font-size: 0.667rem; }
 
-p.small, .small, small, .wp-caption-text, .wpcf7-not-valid-tip { font-size: 0.556rem; }
+p.small, .small, small, .wp-caption-text, label .wpcf7-not-valid-tip { font-size: 0.556rem; }
 
 a {
   text-shadow: none !important;
@@ -300,7 +309,6 @@ img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
 .aligncenter { display: block; margin-left: auto; margin-right: auto; }
 
 
-
 /* -------------------------- */
 /* Menu */
 /* -------------------------- */
@@ -360,11 +368,13 @@ img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
     }
 
   
-  }
+}
 
 /* -------------------------- */
-/* Hamburger icon https://github.com/jonsuh/hamburgers */
+/* Hamburger icon 
+/* https://github.com/jonsuh/hamburgers */
 /* -------------------------- */
+
 .hamburger {
   padding: 6px 0px;
   display: inline-block;
@@ -539,6 +549,7 @@ ul.pagination li a.prev { margin-right: 20px; }
 	padding: 5px;
   margin-top: 5px;
 	transition: color 0.1s linear 0s, background-color 0.1s linear 0s, opacity 0.2s linear 0s !important;
+ 
 }
 
 .wpcf7 input[type="text"]:focus,
@@ -555,7 +566,45 @@ ul.pagination li a.prev { margin-right: 20px; }
 
 .wpcf7 textarea { resize: none; }
 
-.wpcf7-submit { cursor: pointer; }
+.wpcf7-submit { cursor: pointer;}
+
+/* replace ajax load gif */
+.wpcf7 form.wpcf7-form span.ajax-loader { background: none; }
+
+.wpcf7 form.wpcf7-form span.ajax-loader {
+    min-width: 1em;
+    min-height: 1em;
+    position: relative;
+}
+ 
+.wpcf7 form.wpcf7-form span.ajax-loader:before {
+    content: 'Loading…';
+    position: absolute;
+    top: .5em;
+    right: -1.2em;
+    width: 1em;
+    height: 1em;
+    margin-top: -.5em;
+    margin-left: -.5em;
+}
+ 
+.wpcf7 form.wpcf7-form span.ajax-loader:not(:required):before {
+    content: '';
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    border-top-color: #404040;
+    animation: spinner .6s linear infinite;
+    -webkit-animation: spinner .6s linear infinite;
+}
+
+@keyframes spinner {
+    to {transform: rotate(360deg);}
+}
+ 
+@-webkit-keyframes spinner {
+    to {-webkit-transform: rotate(360deg);}
+}
+ 
 
 /* -------------------------- */
 /* Footer */

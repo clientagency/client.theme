@@ -7,11 +7,11 @@ wp_register_script( 'pace', get_stylesheet_directory_uri() . '/js/pace.js', fals
 wp_register_script( 'modernizr-custom', get_stylesheet_directory_uri() . '/js/modernizr.js', false, null, true);
 wp_register_script( 'tether', get_stylesheet_directory_uri() . '/js/tether.min.js', false, null, true);
 wp_register_script( 'bootstrap', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', false, null, true);
-wp_register_script( 'plugins', get_stylesheet_directory_uri() . '/js/plugins.js', array( 'jquery' ));
 wp_register_script( 'imgloaded', get_stylesheet_directory_uri() . '/js/imagesloaded.pkgd.min.js', array( 'jquery' ));
 wp_register_script( 'masonry', get_stylesheet_directory_uri() . '/js/masonry.pkgd.min.js', array( 'jquery' )); 
 wp_register_script( 'headroom', get_stylesheet_directory_uri() . '/js/headroom.min.js', array( 'jquery' ));
 wp_register_script( 'headroom-jQuery', get_stylesheet_directory_uri() . '/js/jQuery.headroom.js', array( 'jquery' ));
+wp_register_script( 'plugins', get_stylesheet_directory_uri() . '/js/plugins.js', array( 'jquery' ));
 wp_register_script( 'script', get_stylesheet_directory_uri() . '/js/script.js', array( 'jquery' ));
 wp_register_script( 'ie10', get_stylesheet_directory_uri() . '/js/ie10-viewport-bug-workaround.js', false, null, true);
 wp_enqueue_script('pace');	

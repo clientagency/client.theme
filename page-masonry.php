@@ -6,7 +6,7 @@ get_header(); ?>
 
 <main class="navbar-margin">
 
-<div class="container pt-5">
+<div class="container">
 <div class="row masonry">
 
 <?php
@@ -25,9 +25,9 @@ get_header(); ?>
 
 <?php endwhile; ?>
 
-<?php if (function_exists(custom_pagination)) { ?>
-	  </div>
-    <div class="row">
+<?php if (function_exists('custom_pagination')) { ?>
+</div>
+<div class="row">
         <?php custom_pagination($the_query->max_num_pages,"",$paged); ?>
       <?php } ?>
     

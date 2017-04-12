@@ -25,7 +25,7 @@
     </div>
     <div class="col text-right">
       <p><small>
-      Made by
+      Made by Client
       </small></p>
     </div>        
   </div></div>
