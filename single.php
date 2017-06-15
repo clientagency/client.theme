@@ -24,9 +24,7 @@
         <h1 class="mb-4"><?php the_title(); ?></h1>
 
         <?php the_content(); ?>
-
-        <?php edit_post_link(); ?>
-
+        
         <?php // comments_template(); ?>
 
       </article>
@@ -48,5 +46,5 @@
 </div>
 
 </main>
-
+<div class="edit-post-link"><?php edit_post_link('<i class="icon ion-edit"></i>', '', ''); ?></div>
 <?php get_footer(); ?>
