@@ -25,12 +25,12 @@
     <div class="col">
     <article>
       <?php the_content(); ?>
-      <?php edit_post_link(); ?>
+      
     </article>
     </div>
 
   </div>
 </div>
 <?php endwhile; endif; ?>
-
+<div class="edit-post-link"><?php edit_post_link('<i class="icon ion-edit"></i>', '', ''); ?></div>
 <?php get_footer(); ?>

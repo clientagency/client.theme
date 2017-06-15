@@ -7,29 +7,29 @@
     <div class="col col-md-10 col-centered">
 	  <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		
-		  <?php
-      if ( wp_is_mobile() ) {
-       $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium', false, '' );	
-      } else {
-       $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large', false, '' );
-      } ?>
-      
-      <div class="single-image mb16">
-        <img src="<?php echo $src[0]; ?>" class="img-fluid">
-      </div>
-		  
-		
-			<h1 class="mb-4"><?php the_title(); ?></h1>
-			
-			<?php the_content(); ?>
+      <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-			<?php edit_post_link(); ?>
+        <?php
+        if ( wp_is_mobile() ) {
+         $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium', false, '' );	
+        } else {
+         $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large', false, '' );
+        } ?>
 
-			<?php // comments_template(); ?>
+        <div class="single-image mb16">
+          <img src="<?php echo $src[0]; ?>" class="img-fluid">
+        </div>
 
-		</article>
+
+        <h1 class="mb-4"><?php the_title(); ?></h1>
+
+        <?php the_content(); ?>
+
+        <?php edit_post_link(); ?>
+
+        <?php // comments_template(); ?>
+
+      </article>
 	
   	<?php endwhile; ?>
 

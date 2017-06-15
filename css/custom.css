@@ -50,12 +50,12 @@ body {
 
 ::selection {
   background: #1a1a1a;
-  color: #1a1a1a;
+  color: #fff;
 }
 
 ::-moz-selection {
   background: #1a1a1a;
-  color: #1a1a1a;
+  color: #fff;
 }
 
 
@@ -252,13 +252,14 @@ a:active {
   outline: 0 !important;
   text-decoration: none;
 }
+
 article a { text-decoration: underline; }
 
 .italic, em, i { font-style: italic; }
 
 .caps { text-transform: uppercase; }
 
-a, a:hover, a:active, a:focus {
+button, button:hover, button:active, button:focus {
   outline: 0;
 }
 
@@ -298,6 +299,18 @@ input:focus { outline: 0; }
 /* -------------------------- */
 /* Styles */
 /* -------------------------- */
+
+.edit-post-link { position: fixed; bottom: 30px; right: 30px;  }
+.edit-post-link a { 
+  background: #000; color: #fff; 
+  height: 40px; width: 40px; line-height: 40px; 
+  text-align: center; border-radius: 50%; 
+  display: block; 
+  transform:  translateY(0px);
+  box-shadow:0 3px 9px rgba(0,0,0,0.3); 
+  transition: box-shadow 0.5s ease-in-out, translate 0.3s ease-in-out; 
+}
+.edit-post-link a:hover { box-shadow:0 3px 9px rgba(0,0,0,0.6); transform:translateY(-3px); }
 
 .text-right { text-align: right; }
 .text-center { text-align: center; }
@@ -406,6 +419,8 @@ line breaks are adjacent */
 /* Hamburger icon 
 /* https://github.com/jonsuh/hamburgers */
 /* -------------------------- */
+
+button.hamburger--slider:focus {outline:0 !important;}
 
 .hamburger {
   padding: 6px 0px;
@@ -636,7 +651,6 @@ ul.pagination li a.prev { margin-right: 20px; }
 @-webkit-keyframes spinner {
     to {-webkit-transform: rotate(360deg);}
 }
- 
 
 /* -------------------------- */
 /* Footer */
@@ -647,14 +661,14 @@ ul.pagination li a.prev { margin-right: 20px; }
 .footer ul { padding-left: 0px; list-style: none;}
 
 .copyright { background: #000; }
-.copyright p { color: #ccc; line-height: 30px; margin: 0; }
 
+.copyright p { color: #ccc; line-height: 30px; margin: 0; }
 
 /* -------------------------- */
 /* Custom */
 /* -------------------------- */
 
-@media (min-width: 576px) and (max-width: 768px) {
+@media (min-width: 576px) and (max-width: 990px) {
   .container {
     width: 100%;
   }

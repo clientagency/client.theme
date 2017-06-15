@@ -16,7 +16,7 @@
 </head>
 <body <?php body_class(); ?>>
     
-  <header class="header">
+  <header class="header" data-headroom>
     
     <nav class="navbar navbar-toggleable-sm navbar-light fixed-top" role="navigation">
     	<div class="container">

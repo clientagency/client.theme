@@ -15,7 +15,7 @@ wp_register_script( 'plugins', get_stylesheet_directory_uri() . '/js/plugins.js'
 wp_register_script( 'script', get_stylesheet_directory_uri() . '/js/script.js', array( 'jquery' ));
 wp_register_script( 'ie10', get_stylesheet_directory_uri() . '/js/ie10-viewport-bug-workaround.js', false, null, true);
 wp_enqueue_script('pace');	
-wp_enqueue_script('modernizr-custom');	
+// wp_enqueue_script('modernizr-custom');	
 wp_enqueue_script('tether');
 wp_enqueue_script('bootstrap');	
 wp_enqueue_script('headroom');  
@@ -29,7 +29,8 @@ wp_enqueue_script('ie10');
 // css
 wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css' );  
 wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css' );
-wp_enqueue_style( 'fawesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
+// wp_enqueue_style( 'fawesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
+wp_enqueue_style( 'ion-icons', get_template_directory_uri() . '/css/ionicons.min.css' );  
 wp_enqueue_style( 'margin', get_template_directory_uri() . '/css/margins.css' );
 wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/animate.css' );
 wp_enqueue_style( 'custom', get_template_directory_uri() . '/css/custom.css' );
