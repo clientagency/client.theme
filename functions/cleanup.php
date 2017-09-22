@@ -39,13 +39,14 @@ add_filter( 'the_generator', 'no_generator' );
 function custom_wp_nav_menu($var) {
   return is_array($var) ? array_intersect($var, array(
 		//List of allowed menu classes
-		//'current_page_item',
+		'current_page_item',
 		'current_page_parent',
 		'current_page_ancestor',
 		'first',
 		'last',
 		'vertical',
-		'horizontal'
+		'horizontal',
+    'menu-item'
 		)
 	) : '';
 }
@@ -53,18 +54,19 @@ add_filter('nav_menu_css_class', 'custom_wp_nav_menu');
 add_filter('nav_menu_item_id', 'custom_wp_nav_menu');
 add_filter('page_css_class', 'custom_wp_nav_menu');
 
-//Replaces "current-menu-item" with "active", not needed because wp walker
+//Fix menu classes, wp-walker adds active classes already!!!
 function current_to_active($text){
 	$replace = array(
-		//List of menu item classes that should be changed to "active"
-		'current_page_item' => 'active',
-		'current_page_parent' => 'active',
-		'current_page_ancestor' => 'active',
+		//List of menu item classes that should be changed
+		'menu-item' => 'nav-item',
+    //'current_page_item' => 'active'
+		//'current_page_parent' => 'active',
+		//'current_page_ancestor' => 'active',
 	);
 	$text = str_replace(array_keys($replace), $replace, $text);
 		return $text;
 	}
-//add_filter ('wp_nav_menu','current_to_active');
+add_filter ('wp_nav_menu','current_to_active');
 
 //Deletes empty classes and removes the sub menu class
 function strip_empty_classes($menu) {
@@ -72,5 +74,7 @@ function strip_empty_classes($menu) {
     return $menu;
 }
 add_filter ('wp_nav_menu','strip_empty_classes');
+
+
 
 ?>

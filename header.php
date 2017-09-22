@@ -18,26 +18,26 @@
     
   <header class="header" data-headroom>
     
-    <nav class="navbar navbar-toggleable-sm navbar-light fixed-top" role="navigation">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" role="navigation">
     	<div class="container">
         
-          <button type="button" class="navbar-toggler navbar-toggler-right hamburger hamburger--slider" data-toggle="collapse" data-target="#header-menu">
-            <span class="hamburger-box">
-            	<span class="hamburger-inner"></span>
-            </span>
-          </button>
-          
           <a class="navbar-brand" href="<?php echo home_url(); ?>">
             	<img src="<?php echo esc_url( get_template_directory_uri() ) ?>/img/logo.png" class="img-responsive" alt="<?php bloginfo( 'name' ); ?>">
           </a>
       	 
+          <button type="button" class="navbar-toggler hamburger" data-toggle="collapse" data-target="#header-menu">
+            <span class="hamburger-box">
+            	<span class="hamburger-inner"></span>
+            </span>
+          </button>
+         
            <?php
                 wp_nav_menu( array(
                     'menu'              => 'primary',
                     'theme_location'    => 'header-menu',
                     'depth'             => 2,
                     'container'         => 'div',
-                    'container_class'   => 'collapse navbar-collapse mr-auto justify-content-end',
+                    'container_class'   => 'collapse navbar-collapse justify-content-end',
                     'container_id'      => 'header-menu',
                     'menu_class'        => 'navbar-nav',
                     'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',

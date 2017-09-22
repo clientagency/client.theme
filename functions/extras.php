@@ -16,6 +16,13 @@ function custom_login_url() {
 }
 add_filter( 'login_headerurl', 'custom_login_url' );
 
+/* Admin login custom bg */
+function my_custom_login() {
+echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('stylesheet_directory') . '/css/admin-login.css" />';
+}
+add_action('login_head', 'my_custom_login');
+
+
 function custom_login_title() {
     return get_option( 'blogname' );
 }
@@ -26,7 +33,8 @@ function remove_footer_admin ()
 {
     echo '<span id="footer-thankyou">With &hearts; <a href="http://www.client.fi" target="_blank">Client Studio</a></span>';
 }
-add_filter('admin_footer_text', 'remove_footer_admin')
-
+add_filter('admin_footer_text', 'remove_footer_admin');
+  
+  
 
 ?>
