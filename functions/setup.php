@@ -1,5 +1,12 @@
 <?php
 
+// disable admin editor
+define( 'DISALLOW_FILE_EDIT', true );
+
+/*
+add_theme_support('post-formats', array('aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat'));
+*/
+
 function client_setup() {
 	add_theme_support('post-thumbnails');
  	update_option('thumbnail_size_w', 600);
@@ -125,11 +132,6 @@ function remove_width_attribute( $html ) {
 }
 add_filter('post_thumbnail_html', 'remove_width_attribute', 10 ); 
 add_filter('image_send_to_editor', 'remove_width_attribute', 10 ); 
-
-/*
-add_theme_support('post-formats', array('aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat'));
-*/
-
 
 if ( ! function_exists( 'client_pagination' ) ) {
 	function client_pagination() {

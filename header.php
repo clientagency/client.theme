@@ -9,7 +9,7 @@
   <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?>" href="<?php bloginfo('rss2_url'); ?>" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
   <?php wp_head(); ?>
         
@@ -20,9 +20,8 @@
     
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" role="navigation">
     	<div class="container">
-        
           <a class="navbar-brand" href="<?php echo home_url(); ?>">
-            	<img src="<?php echo esc_url( get_template_directory_uri() ) ?>/img/logo.png" class="img-responsive" alt="<?php bloginfo( 'name' ); ?>">
+            	<img src="<?php echo esc_url( get_template_directory_uri() ) ?>/img/logo.png" class="img-fluid" alt="<?php bloginfo( 'name' ); ?>">
           </a>
       	 
           <button type="button" class="navbar-toggler hamburger" data-toggle="collapse" data-target="#header-menu">

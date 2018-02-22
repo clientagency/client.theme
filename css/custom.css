@@ -1,4 +1,4 @@
-h/* -------------------------- */
+/* -------------------------- */
 /* Load */
 /* -------------------------- */
 
@@ -15,7 +15,7 @@ h/* -------------------------- */
 }
 
 .pace .pace-progress {
-  background: #1f3333;
+  background: #010101;
   position: fixed;
   z-index: 200000;
   top: 0;
@@ -32,9 +32,7 @@ body > :not(.pace),body:before,body:after {
   transition:opacity .2s ease-in-out
 }
 
-body:not(.pace-done) > :not(.pace),body:not(.pace-done):before,body:not(.pace-done):after {
-  
-}
+body:not(.pace-done) > :not(.pace),body:not(.pace-done):before,body:not(.pace-done):after {}
 
 /* -------------------------- */
 /* Additions */
@@ -66,24 +64,9 @@ html, body {
 
 .col-centered { float: none; margin: 0 auto;}
 
-.jumbotron { margin: 0; border: 0; border-radius: 0; background-color: #f8f8f8; }
-
-.table { width:100%; }
-
-.table-parent { display: table; height: 100%; width: 100%; }
-.table-cell { display: table-cell; vertical-align: middle; }
+.jumbotron { margin: 0; padding: 0; border: 0; border-radius: 0; background-color: #010101; min-height: 400px;}
 
 .debug { background: #ff0000; }
-
-.no-gutters {
-  margin-right: 0;
-  margin-left: 0;
-}
-.no-gutters .col,
-.no-gutters [class*="col-"] {
-    padding-right: 0;
-    padding-left: 0;
-}
 
 /* responsive video container */
 .embed-container { 
@@ -114,9 +97,6 @@ html, body {
     overflow: hidden;
 }
 
-.flex-grow {
-    flex: 1;
-}
 
 /* -------------------------- */
 /* Typo */
@@ -160,10 +140,6 @@ h6
   margin-top: 0;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  word-break:break-word;
-  -webkit-hyphens:auto;
-  -moz-hyphens:auto;
-  hyphens:auto;
   color: #000;
   font-weight: 400;
 }
@@ -239,7 +215,7 @@ p.large, p.lead { font-size: 0.889rem;}
 p.small, .small, small, .wp-caption-text, label .wpcf7-not-valid-tip { font-size: 0.556rem; }
 
 a {
-  text-shadow: none !important;
+  text-shadow: none; text-decoration: none;
   color: #010101; 	
   transition: color 0.1s linear 0s, background-color 0.1s linear 0s, opacity 0.2s linear 0s !important;
 }
@@ -306,11 +282,11 @@ input:focus { outline: 0; }
 .edit-post-link { position: fixed; bottom: 30px; right: 30px;  }
 .edit-post-link a { 
   background: #000; color: #fff; 
-  height: 40px; width: 40px; line-height: 40px; 
+  height: 50px; width: 50px; line-height: 50px; 
   text-align: center; border-radius: 50%; 
   display: block; 
   transform:  translateY(0px);
-  box-shadow:0 3px 9px rgba(0,0,0,0.3); 
+  box-shadow:0 3px 9px rgba(0,0,0,0.15); 
   transition: box-shadow 0.5s ease-in-out, translate 0.3s ease-in-out; 
 }
 .edit-post-link a:hover { box-shadow:0 3px 9px rgba(0,0,0,0.6); transform:translateY(-3px); }
@@ -361,15 +337,14 @@ line breaks are adjacent */
 /* Menu */
 /* -------------------------- */
 
-.navbar-brand { margin:0; padding: 0;}
-.navbar-brand img { max-width: 120px; height: auto; }
+.navbar-brand { margin:0; padding: 0; }
+.navbar-brand img { max-width: 110px; height: auto; }
 
-.navbar-light { background: #fff; padding: 10px 0px; /* box-shadow: 0 1px 2px rgba(0,0,0,0.15); */  }
+.navbar-light { background: #fff; padding: 20px 0px; /* box-shadow: 0 1px 2px rgba(0,0,0,0.15); */  }
 .navbar-dark { background: #0a0a0a; }
 
 .navbar-dark ul li, .navbar-dark ul li a { color: #fff; }
 
-/* mobile */
 .collapse.show ul li, .collapsing ul li { padding: 20px 10px; font-size: 1rem; }
 
 .collapse.show ul, .collapsing ul { 
@@ -378,7 +353,6 @@ line breaks are adjacent */
   padding-bottom: 30px; 
   margin-left: 0;
 }
-
 
 .headroom {
     -webkit-transition: all 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -456,7 +430,6 @@ line breaks are adjacent */
     transition-property: transform, -webkit-transform;
     transition-duration: 0.15s;
     transition-timing-function: ease; 
-  
     background-color: #010101;
 }
 
@@ -513,21 +486,20 @@ line breaks are adjacent */
 	background: #1a1a1a; 
 	color: #fff;
 	font-size: 0.778rem; 
-	padding: 8px 25px; 
+	padding: 10px 25px; 
 	border-radius: 0;
-	transition: color 0.1s linear 0s, background-color 0.1s linear 0s, opacity 0.2s linear 0s !important;
+    text-decoration: none;	
+	
+	transition: color 0.1s linear 0s, background-color 0.1s linear 0s, opacity 0.2s linear 0s, box-shadow 0.2s ease-in-out !important;
 }
-
 .btn:hover {
 	background: #000; color:#fff;  
+	box-shadow:0 4px 8px rgba(0,0,0,0.2); 
 }
-
 .btn:focus { outline: 0 !important; color:#fff;  }
-
 .btn-rounded {
 	border-radius: 30px; 
 }
-
 
 /* -------------------------- */
 /* Paginate */
@@ -565,7 +537,7 @@ ul.pagination li a.prev { margin-right: 20px; }
 }
 
 .wpcf7-response-output:before {
-	font-family: 'FontAwesome';
+	font-family: "Ionicons";
     font-style: normal;
     font-weight: normal;
     text-decoration: inherit;
@@ -576,21 +548,21 @@ ul.pagination li a.prev { margin-right: 20px; }
 }
 
 .wpcf7-response-output.wpcf7-validation-errors:before {
-	content: "\f071";
+	content: "\f100";
 }
 .wpcf7-validation-errors {
 	background: #feb740;
 }
 
 .wpcf7-response-output.wpcf7-mail-sent-ng:before {
-	content: "\f071";
+	content: "\f100";
 }
 .wpcf7-mail-sent-ng {
 	background: #ff0000;
 }
 
 .wpcf7-response-output.wpcf7-mail-sent-ok:before {
-	content: "\f00c";
+	content: "\f383";
 }
 .wpcf7-mail-sent-ok {
 	background: #008740;
@@ -603,10 +575,10 @@ ul.pagination li a.prev { margin-right: 20px; }
 {
   background-color: #fff;
   color: #ccc;
-	border: 1px solid #ccc;
-	padding: 5px;
+  border: 1px solid #ccc;
+  padding: 5px;
   margin-top: 5px;
-	transition: color 0.1s linear 0s, background-color 0.1s linear 0s, opacity 0.2s linear 0s !important;
+  transition: color 0.1s linear 0s, background-color 0.1s linear 0s, opacity 0.2s linear 0s !important;
  
 }
 
@@ -671,21 +643,14 @@ ul.pagination li a.prev { margin-right: 20px; }
 
 .footer ul { padding-left: 0px; list-style: none;}
 
-.copyright { background: #000; }
+.copyright { background: #eee; }
 
-.copyright p { color: #ccc; line-height: 30px; margin: 0; }
+.copyright p { color: #808080; line-height: 30px; margin: 0; }
 
 /* -------------------------- */
 /* Custom */
 /* -------------------------- */
 
-@media (min-width: 576px) and (max-width: 990px) {
-  .container {
-    width: 100%;
-  }
-}
-
-.post-content a.read-more { display: block; margin-top: 10px;}
 
 
 
