@@ -1,18 +1,13 @@
 <!doctype html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
- 
   <meta charset="<?php bloginfo('charset'); ?>">
   <title><?php wp_title(''); ?></title>
-
   <link href="<?php echo get_template_directory_uri(); ?>/img/favicon.png" type="image/png" rel="shortcut icon">
   <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?>" href="<?php bloginfo('rss2_url'); ?>" />
-
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        
   <?php wp_head(); ?>
-        
 </head>
 <body <?php body_class(); ?>>
     
@@ -24,11 +19,10 @@
             	<img src="<?php echo esc_url( get_template_directory_uri() ) ?>/img/logo.png" class="img-fluid" alt="<?php bloginfo( 'name' ); ?>">
           </a>
       	 
-          <button type="button" class="navbar-toggler hamburger" data-toggle="collapse" data-target="#header-menu">
-            <span class="hamburger-box">
-            	<span class="hamburger-inner"></span>
-            </span>
-          </button>
+         <button class="navbar-toggler minus collapsed" type="button" data-toggle="collapse" data-target="#header-menu" aria-controls="header-menu" aria-expanded="false" aria-label="Toggle menu">
+        	<div class="hamburger hamburger--minus js-hamburger"><div class="hamburger-box"><div class="hamburger-inner"></div></div></div>
+      	 </button>
+
          
            <?php
                 wp_nav_menu( array(

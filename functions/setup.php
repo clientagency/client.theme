@@ -15,9 +15,9 @@ function client_setup() {
 	update_option('medium_size_h', 0);
 	update_option('large_size_w', 1600);
 	update_option('large_size_h', 0);
-  // rss thingy
-  add_theme_support('automatic-feed-links');
-  add_theme_support( 'title-tag' );
+    // rss thingy
+    add_theme_support('automatic-feed-links');
+    add_theme_support( 'title-tag' );
 }
 add_action('init', 'client_setup');
 
@@ -29,7 +29,7 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 /* Change Excerpt format */
 function client_excerpt_readmore() {
-	return '&nbsp; <a href="'. get_permalink() . '" class="read-more">' . '&hellip; ' . __('Read more', 'client') . ' <i class="fa fa-angle-right" aria-hidden="true"></i>' . '</a>';
+	return '&nbsp; <a href="'. get_permalink() . '" class="read-more">' . '&hellip; ' . __('Read more', 'client') . ' <i class="icon ion-chevron-right" aria-hidden="true"></i>' . '</a>';
 }
 add_filter('excerpt_more', 'client_excerpt_readmore');
 

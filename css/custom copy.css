@@ -190,7 +190,7 @@ p, table, label, ul, ol, dl, dt, select, address {
 	font-size: 14px; 
 	font-size: 0.778rem;
 	margin-bottom: 14.85px;
-    margin-bottom: 0.825rem;
+  margin-bottom: 0.825rem;
 	line-height: 1.111rem;
 	color: #010101;
 }
@@ -279,6 +279,18 @@ input:focus { outline: 0; }
 /* Styles */
 /* -------------------------- */
 
+.edit-post-link { position: fixed; bottom: 30px; right: 30px;  }
+.edit-post-link a { 
+  background: #000; color: #fff; 
+  height: 50px; width: 50px; line-height: 50px; 
+  text-align: center; border-radius: 50%; 
+  display: block; 
+  transform:  translateY(0px);
+  box-shadow:0 3px 9px rgba(0,0,0,0.15); 
+  transition: box-shadow 0.5s ease-in-out, translate 0.3s ease-in-out; 
+}
+.edit-post-link a:hover { box-shadow:0 3px 9px rgba(0,0,0,0.6); transform:translateY(-3px); }
+
 .text-right { text-align: right; }
 .text-center { text-align: center; }
 
@@ -328,7 +340,10 @@ line breaks are adjacent */
 .navbar-brand { margin:0; padding: 0; }
 .navbar-brand img { max-width: 110px; height: auto; }
 
-.navbar-light { background: #fff; padding-top: 20px; padding-bottom: 20px; }
+.navbar-light { background: #fff; padding: 20px 0px; /* box-shadow: 0 1px 2px rgba(0,0,0,0.15); */  }
+.navbar-dark { background: #0a0a0a; }
+
+.navbar-dark ul li, .navbar-dark ul li a { color: #fff; }
 
 .collapse.show ul li, .collapsing ul li { padding: 20px 10px; font-size: 1rem; }
 
@@ -339,20 +354,51 @@ line breaks are adjacent */
   margin-left: 0;
 }
 
-.navbar-toggler { border: 0; padding: 0;  }
+.headroom {
+    -webkit-transition: all 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    -moz-transition: all 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: all 400ms cubic-bezier(0.215, 0.61, 0.355, 1);    
+}
 
-/*!
- * Hamburgers
- * @description Tasty CSS-animated hamburgers
- * @author Jonathan Suh @jonsuh
- * @site https://jonsuh.com/hamburgers
- * @link https://github.com/jonsuh/hamburgers
- */
+@media screen and (min-width: 768px) {
+   
+    .headroom--pinned {
+      position: fixed; width: 100%; top: 0; z-index: 9999;
+      -webkit-transform: translateY(0px);
+      -moz-transform: translateY(0px);
+      -ms-transform: translateY(0px);
+      -o-transform: translateY(0px);
+      transform: translateY(0px);
+      
+    }
+
+    .headroom--unpinned {
+        -webkit-transform: translateY(-100px);
+        -moz-transform: translateY(-100px);
+        -ms-transform: translateY(-100px);
+        -o-transform: translateY(-100px);
+        transform: translateY(-100px);
+        opacity: 0;
+        pointer-events: none
+    }
+
+  
+}
+
+/* -------------------------- */
+/* Hamburger icon 
+/* https://github.com/jonsuh/hamburgers */
+/* -------------------------- */
+
+.hamburger:focus {outline:0 !important;}
+
 .hamburger {
-  padding: 10px 10px;
+  padding: 0px 0px;
   display: inline-block;
   cursor: pointer;
+  transition-property: opacity, -webkit-filter;
   transition-property: opacity, filter;
+  transition-property: opacity, filter, -webkit-filter;
   transition-duration: 0.15s;
   transition-timing-function: linear;
   font: inherit;
@@ -361,56 +407,72 @@ line breaks are adjacent */
   background-color: transparent;
   border: 0;
   margin: 0;
-  overflow: visible; }
-  .hamburger:hover {
-    opacity: 0.7; }
-  .hamburger.is-active:hover {
-    opacity: 0.7; }
-  .hamburger.is-active .hamburger-inner,
-  .hamburger.is-active .hamburger-inner::before,
-  .hamburger.is-active .hamburger-inner::after {
-    background-color: #000; }
-
+  margin-top: 8px;
+  overflow: visible;
+}
 .hamburger-box {
-  width: 40px;
+  width: 35px;
   height: 24px;
   display: inline-block;
-  position: relative; }
+  position: relative; 
+}
 .hamburger-inner {
   display: block;
   top: 50%;
-  margin-top: -2px; }
-  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
-    width: 40px;
-    height: 4px;
-    background-color: #000;
-    border-radius: 1px;
+  margin-top: -2px; 
+}
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    width: 35px;
+    height: 3px;
     position: absolute;
+    transition-property: -webkit-transform;
     transition-property: transform;
+    transition-property: transform, -webkit-transform;
     transition-duration: 0.15s;
-    transition-timing-function: ease; }
-  .hamburger-inner::before, .hamburger-inner::after {
-    content: "";
-    display: block; }
-  .hamburger-inner::before {
-    top: -10px; }
-  .hamburger-inner::after {
-    bottom: -10px; }
-/*
-   * Minus
-*/
-.hamburger--minus .hamburger-inner::before, .hamburger--minus .hamburger-inner::after {
-  transition: bottom 0.08s 0s ease-out, top 0.08s 0s ease-out, opacity 0s linear; }
+    transition-timing-function: ease; 
+    background-color: #010101;
+}
 
-.navbar-toggler:not(.collapsed) .hamburger--minus .hamburger-inner::before, .navbar-toggler:not(.collapsed) .hamburger--minus .hamburger-inner::after {
-  opacity: 0;
-  transition: bottom 0.08s ease-out, top 0.08s ease-out, opacity 0s 0.08s linear; }
+.navbar-dark .hamburger-inner, .navbar-dark .hamburger-inner::before, .navbar-dark .hamburger-inner::after {
+  background: #fff; 
+}
 
-.navbar-toggler:not(.collapsed) .hamburger--minus .hamburger-inner::before {
-  top: 0; }
-
-.navbar-toggler:not(.collapsed) .hamburger--minus .hamburger-inner::after {
-  bottom: 0; 
+.hamburger-inner::before, .hamburger-inner::after {
+  content: "";
+  display: block; 
+}
+.hamburger-inner::before {
+  top: -10px; 
+}
+.hamburger-inner::after {
+  bottom: -10px; 
+}
+.hamburger .hamburger-inner {
+  top: 2px; 
+}
+.hamburger .hamburger-inner::before {
+    top: 10px;
+    transition-property: opacity, -webkit-transform;
+    transition-property: transform, opacity;
+    transition-property: transform, opacity, -webkit-transform;
+    transition-timing-function: ease;
+    transition-duration: 0.2s; 
+}
+.hamburger .hamburger-inner::after {
+    top: 20px; 
+}
+.hamburger.is-active .hamburger-inner {
+    -webkit-transform: translate3d(0, 10px, 0) rotate(45deg);
+    transform: translate3d(0, 10px, 0) rotate(45deg); 
+}
+.hamburger.is-active .hamburger-inner::before {
+    -webkit-transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
+    transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
+    opacity: 0; 
+}
+.hamburger.is-active .hamburger-inner::after {
+    -webkit-transform: translate3d(0, -20px, 0) rotate(-90deg);
+    transform: translate3d(0, -20px, 0) rotate(-90deg);
 }
 
 
@@ -432,10 +494,9 @@ line breaks are adjacent */
 }
 .btn:hover {
 	background: #000; color:#fff;  
-	/* box-shadow:0 4px 8px rgba(0,0,0,0.2);  */
+	box-shadow:0 4px 8px rgba(0,0,0,0.2); 
 }
-.btn:focus { outline: 0 !important; color:#fff; }
-
+.btn:focus { outline: 0 !important; color:#fff;  }
 .btn-rounded {
 	border-radius: 30px; 
 }
@@ -585,7 +646,6 @@ ul.pagination li a.prev { margin-right: 20px; }
 .copyright { background: #eee; }
 
 .copyright p { color: #808080; line-height: 30px; margin: 0; }
-
 
 /* -------------------------- */
 /* Custom */

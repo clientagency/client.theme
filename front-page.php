@@ -2,7 +2,7 @@
 
 <main class="navbar-margin">
 
-<div class="jumbotron jumbotron-fluid jumbotron jumbotron-fluid d-flex align-items-center">
+<div class="jumbotron jumbotron-fluid jumbotron-fluid d-flex align-items-center">
   <div class="container"><div class="row"><div class="col">
     
 	<h1 class="text-white">h1. Title</h1>
