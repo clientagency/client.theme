@@ -68,8 +68,6 @@ html, body {
 
 .debug { background: #ff0000; }
 
-.rel { position: relative; }
-
 /* responsive video container */
 .embed-container { 
 		position: relative; 
@@ -332,9 +330,9 @@ line breaks are adjacent */
 
 .navbar-light { background: #fff; padding-top: 20px; padding-bottom: 20px; }
 
-.header .collapse.show ul li, .header .collapsing ul li { padding: 20px 10px; font-size: 1rem; }
+.collapse.show ul li, .collapsing ul li { padding: 20px 10px; font-size: 1rem; }
 
-.header .collapse.show ul, .header .collapsing ul { 
+.collapse.show ul, .collapsing ul { 
   text-align: center; 
   padding-top: 30px; 
   padding-bottom: 30px; 
@@ -429,6 +427,7 @@ line breaks are adjacent */
 	padding: 10px 25px; 
 	border-radius: 0;
     text-decoration: none;	
+	
 	transition: color 0.1s linear 0s, background-color 0.1s linear 0s, opacity 0.2s linear 0s, box-shadow 0.2s ease-in-out !important;
 }
 .btn:hover {

@@ -3,7 +3,7 @@
 	<main role="main">
 		<section class="container">
 			
-			<div class="row pt160 pb160">
+    <div class="row pt160 pb160">
         <div class="col-12 text-center">
           <article id="post-404">
 

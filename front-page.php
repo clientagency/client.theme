@@ -2,6 +2,7 @@
 
 <main class="navbar-margin">
 
+<?php if (have_posts()): while (have_posts()) : the_post(); ?>    
 <div class="jumbotron jumbotron-fluid jumbotron-fluid d-flex align-items-center">
   <div class="container"><div class="row"><div class="col">
     
@@ -11,9 +12,6 @@
   </div></div></div>
 </div>
 
-</main>   
-
-<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 <div class="container mt-4 mb-4">
   <div class="row">
 
@@ -37,6 +35,9 @@
 
   </div>
 </div>
+    
+</main>       
+    
 <?php endwhile; endif; ?>
 <div class="edit-post-link"><?php edit_post_link('<i class="icon ion-edit"></i>', '', ''); ?></div>
 <?php get_footer(); ?>
