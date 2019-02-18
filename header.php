@@ -33,8 +33,8 @@
                     'container_class'   => 'collapse navbar-collapse justify-content-end',
                     'container_id'      => 'header-menu',
                     'menu_class'        => 'navbar-nav',
-                    'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-                    'walker'            => new wp_bootstrap_navwalker())
+                    'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+	                'walker'            => new WP_Bootstrap_Navwalker())
                 );
            ?>
         
