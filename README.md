@@ -1,14 +1,8 @@
-![Wyvern](img/admin_logo.png)
-
 ![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Intro
 
-Client Boilerplate is simple starting theme for any Wordpress project.
-
-## Documentation
-
-Visit [documentation online](http://www.client.style).
+Client Boilerplate is simple boilerplate theme for any Wordpress project. Made with love at Client.Studio in Helsinki.
 
 ## Issues
 
