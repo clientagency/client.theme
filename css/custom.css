@@ -214,7 +214,7 @@ p.large, p.lead { font-size: 0.889rem;}
 
 .footer p, .footer ul, .footer ol { font-size: 0.667rem; }
 
-p.small, .small, small, .wp-caption-text, label .wpcf7-not-valid-tip { font-size: 0.556rem; }
+p.small, .small, small, .wp-caption-text { font-size: 0.556rem; }
 
 a {
   text-shadow: none; text-decoration: none;
@@ -461,6 +461,9 @@ ul.pagination li a.prev { margin-right: 20px; }
   display: none;
 }
 
+.edit-post-link { position: fixed; bottom: 20px; right: 20px;  }
+.edit-post-link a { background: #010101; color: #fff; width: 40px; height: 40px; line-height: 40px; border-radius: 40px; display: block; text-align: center; }
+
 /* -------------------------- */
 /* wpcf7 */
 /* -------------------------- */
@@ -507,6 +510,8 @@ ul.pagination li a.prev { margin-right: 20px; }
 .wpcf7-mail-sent-ok {
 	background: #008740;
 }
+
+span.wpcf7-not-valid-tip { font-size: 0.622rem; margin-top: 5px; }
 
 .wpcf7 input[type="text"],
 .wpcf7 input[type="email"],
@@ -585,8 +590,9 @@ ul.pagination li a.prev { margin-right: 20px; }
 
 .copyright { background: #eee; }
 
-.copyright p { color: #808080; line-height: 30px; margin: 0; }
+.copyright p, .copyright ul { color: #808080; line-height: 30px; margin: 0; font-size: .622rem; }
 
+.copyright a { color: #808080; }
 
 /* -------------------------- */
 /* Custom */

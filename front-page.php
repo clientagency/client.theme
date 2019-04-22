@@ -3,11 +3,10 @@
 <main class="navbar-margin">
 
 <?php if (have_posts()): while (have_posts()) : the_post(); ?>    
-<div class="jumbotron jumbotron-fluid jumbotron-fluid d-flex align-items-center">
+<div class="jumbotron jumbotron-fluid d-flex align-items-center">
   <div class="container"><div class="row"><div class="col">
     
-	<h1 class="text-white">h1. Title</h1>
-    <p class="lead text-white">p.lead This is a modified jumbotron that occupies the entire horizontal space of its parent.
+	  <?php the_content(); ?>
     
   </div></div></div>
 </div>
@@ -17,9 +16,7 @@
 
     <div class="col">
     <article>
-      <?php the_content(); ?>
-		
-		
+    	
 	<h1>h1. Title</h1>
     <h2>h2. Title</h2>
     <h3>h3. Title</h3>

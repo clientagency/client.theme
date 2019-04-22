@@ -10,16 +10,26 @@ add_theme_support('post-formats', array('aside', 'gallery', 'link', 'image', 'qu
 function client_setup() {
 	add_theme_support('post-thumbnails');
  	update_option('thumbnail_size_w', 600);
-	update_option('thumbnail_size_h', 360);
+	update_option('thumbnail_size_h', 480);
 	update_option('medium_size_w', 960);
 	update_option('medium_size_h', 0);
-	update_option('large_size_w', 1600);
+	update_option('large_size_w', 1640);
 	update_option('large_size_h', 0);
     // rss thingy
     add_theme_support('automatic-feed-links');
     add_theme_support( 'title-tag' );
 }
 add_action('init', 'client_setup');
+
+
+// Remove the width and height attributes from inserted images
+function remove_width_attribute( $html ) {
+   $html = preg_replace( '/(width|height)="\d*"\s/', "", $html );
+   return $html;
+}
+add_filter('post_thumbnail_html', 'remove_width_attribute', 10 ); 
+add_filter('image_send_to_editor', 'remove_width_attribute', 10 ); 
+
 
 /* Change Excerpt length */
 function custom_excerpt_length( $length ) {
@@ -46,51 +56,23 @@ function remove_more_jump_link($link) {
 }
 add_filter('the_content_more_link', 'remove_more_jump_link');
 
-// Prevent self-pingback
-function disable_self_trackback( &$links ) {
-  foreach ( $links as $l => $link )
-        if ( 0 === strpos( $link, get_option( 'home' ) ) )
-            unset($links[$l]);
-}
-add_action( 'pre_ping', 'disable_self_trackback' );
 
-// Browser detection body_class() output
-function client_browser_body_class( $classes ) {
-	global $is_lynx, $is_gecko, $is_IE, $is_edge, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
-	
-	if($is_lynx) $classes[] = 'lynx';
-	elseif($is_gecko) $classes[] = 'gecko';
-	elseif($is_opera) $classes[] = 'opera';
-	elseif($is_NS4) $classes[] = 'ns4';
-	elseif($is_safari) $classes[] = 'safari';
-	elseif($is_chrome) $classes[] = 'chrome';
-	elseif($is_edge) $classes[] = 'edge';
-	elseif($is_IE) {
-		$browser = $_SERVER['HTTP_USER_AGENT'];
-		$browser = substr( "$browser", 25, 8);
-		if ($browser == "MSIE 7.0"  ) {
-			$classes[] = 'ie7';
-			$classes[] = 'ie';
-		} elseif ($browser == "MSIE 6.0" ) {
-			$classes[] = 'ie6';
-			$classes[] = 'ie';
-		} elseif ($browser == "MSIE 8.0" ) {
-			$classes[] = 'ie8';
-			$classes[] = 'ie';
-		} elseif ($browser == "MSIE 9.0" ) {
-			$classes[] = 'ie9';
-			$classes[] = 'ie';
-		} else {
-      $classes[] = 'ie';
-    }
-	}
-	else $classes[] = 'unknown';
- 
-	if( $is_iphone ) $classes[] = 'iphone';
- 
-	return $classes;
+function custom_body_classes($classes)
+{
+    // the list of WordPress global browser checks
+    // https://codex.wordpress.org/Global_Variables#Browser_Detection_Booleans
+    $browsers = ['is_iphone', 'is_chrome', 'is_safari', 'is_NS4', 'is_opera', 'is_macIE', 'is_winIE', 'is_gecko', 'is_lynx', 'is_IE', 'is_edge'];
+
+    // check the globals to see if the browser is in there and return a string with the match
+    $classes[] = join(' ', array_filter($browsers, function ($browser) {
+        return $GLOBALS[$browser];
+    }));
+
+    return $classes;
 }
-add_filter( 'body_class', 'client_browser_body_class' );
+
+// call the filter for the body class
+add_filter('body_class', 'custom_body_classes');
 
 // Add page slug to body class
 function add_slug_to_body_class($classes)
@@ -125,13 +107,6 @@ function mobile_body_class( $classes ){
 }
 add_filter('body_class','mobile_body_class');
 
-// Remove the width and height attributes from inserted images
-function remove_width_attribute( $html ) {
-   $html = preg_replace( '/(width|height)="\d*"\s/', "", $html );
-   return $html;
-}
-add_filter('post_thumbnail_html', 'remove_width_attribute', 10 ); 
-add_filter('image_send_to_editor', 'remove_width_attribute', 10 ); 
 
 if ( ! function_exists( 'client_pagination' ) ) {
 	function client_pagination() {
@@ -143,8 +118,8 @@ if ( ! function_exists( 'client_pagination' ) ) {
 			'total' => $wp_query->max_num_pages,
 			'mid_size' => 5,
 			'prev_next' => True,
-			'prev_text' => __('<i class="fa fa-angle-left" aria-hidden="true"></i> &nbsp; Newer'),
-			'next_text' => __('Older &nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i>'),
+			'prev_text' => '<span class="next"><i class="fa fa-angle-left" aria-hidden="true"></i> &nbsp;' . __( 'Older', 'client' ) . '</span> ',
+            'next_text' => '<span class="prev">' . __( 'Newer', 'client' ) . ' &nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i></span> ',
 			'type' => 'list'
 		) );
 		$paginate_links = str_replace( "<ul class='page-numbers'>", "<ul class='pagination'>", $paginate_links );

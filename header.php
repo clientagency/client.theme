@@ -34,8 +34,9 @@
                     'container_id'      => 'header-menu',
                     'menu_class'        => 'navbar-nav',
                     'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-	                'walker'            => new WP_Bootstrap_Navwalker())
-                );
+	                'walker'            => new WP_Bootstrap_Navwalker()
+                    
+                ));
            ?>
         
         </div>
