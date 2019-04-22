@@ -2,7 +2,7 @@
 
 ## Intro
 
-Client Boilerplate is simple boilerplate theme for any Wordpress project. Made with love at Client.Studio in Helsinki.
+Boilerplate for Wordpress using Bootstrap 4. Clear no fuss code with essential functions.
 
 ## Issues
 
