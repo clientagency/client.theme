@@ -10,20 +10,20 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-    
+
   <header class="header" data-headroom>
-    
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" role="navigation">
+
+    <nav class="navbar navbar-expand-lg navbar-light" role="navigation">
     	<div class="container">
           <a class="navbar-brand" href="<?php echo home_url(); ?>">
             	<img src="<?php echo esc_url( get_template_directory_uri() ) ?>/img/logo.png" class="img-fluid" alt="<?php bloginfo( 'name' ); ?>">
           </a>
-      	 
+
          <button class="navbar-toggler minus collapsed" type="button" data-toggle="collapse" data-target="#header-menu" aria-controls="header-menu" aria-expanded="false" aria-label="Toggle menu">
         	<div class="hamburger hamburger--minus js-hamburger"><div class="hamburger-box"><div class="hamburger-inner"></div></div></div>
       	 </button>
 
-         
+
            <?php
                 wp_nav_menu( array(
                     'menu'              => 'primary',
@@ -35,11 +35,11 @@
                     'menu_class'        => 'navbar-nav',
                     'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
 	                'walker'            => new WP_Bootstrap_Navwalker()
-                    
+
                 ));
            ?>
-        
+
         </div>
     </nav>
-    
+
   </header>

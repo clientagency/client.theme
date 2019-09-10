@@ -64,30 +64,32 @@ html, body {
 
 .col-centered { float: none; margin: 0 auto;}
 
-.jumbotron { margin: 0; padding: 0; border: 0; border-radius: 0; background-color: #010101; min-height: 400px;}
+.jumbotron { margin: 0; padding: 0; border: 0; border-radius: 0; background-color: #ccc; min-height: 400px;}
 
 .debug { background: #ff0000; }
 
 .rel { position: relative; }
 
 /* responsive video container */
-.embed-container { 
-		position: relative; 
-		padding-bottom: 56.25%;
-		height: 0;
-		overflow: hidden;
-		max-width: 100%;
-		height: auto;
-} 
-
-.embed-container iframe,
-.embed-container object,
-.embed-container embed { 
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
+.embed-responsive {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.embed-responsive .embed-responsive-item,
+.embed-responsive iframe {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.embed-responsive-16by9 {
+  padding-bottom: 56.25%;
 }
 
 /* Text meant only for screen readers. */
@@ -121,7 +123,7 @@ html {
 }
 
 body {
-	 font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif; 
+	 font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	 font-weight: normal;
 	 letter-spacing: 0.01em;
 	 -webkit-font-smoothing: antialiased;
@@ -157,7 +159,7 @@ h1 {
 
 h2 {
   font-size: 32px;
-  font-size: 1.778rem; 
+  font-size: 1.778rem;
   margin-bottom: 14.85px;
   margin-bottom: 0.825rem;
   text-transform: none;
@@ -174,22 +176,22 @@ h3 {
 
 h4 {
   font-size: 12px;
-  font-size: 0.667rem;	
+  font-size: 0.667rem;
   letter-spacing: 1px;
   text-transform: uppercase;
-  font-weight: bold; 
+  font-weight: bold;
 }
 
 h5, h6 {
   font-size: 15px;
-  font-size: 0.833rem; 
+  font-size: 0.833rem;
   margin-bottom: 11.1375px;
   margin-bottom: 0.61875rem;
 
 }
 
 p, table, label, ul, ol, dl, dt, select, address {
-	font-size: 14px; 
+	font-size: 14px;
 	font-size: 0.778rem;
 	margin-bottom: 14.85px;
     margin-bottom: 0.825rem;
@@ -197,16 +199,16 @@ p, table, label, ul, ol, dl, dt, select, address {
 	color: #010101;
 }
 
-input, textarea, 
+input, textarea,
 .wpcf7 input[type="text"],
 .wpcf7 input[type="email"],
 .wpcf7 textarea {
-	font-size: 13px; 
+	font-size: 13px;
 	font-size: 0.722rem;
 	color: #010101;
 }
 
-article p { 
+article p {
 line-height: 1.333rem;
 }
 
@@ -218,13 +220,13 @@ p.small, .small, small, .wp-caption-text { font-size: 0.556rem; }
 
 a {
   text-shadow: none; text-decoration: none;
-  color: #010101; 	
+  color: #010101;
   transition: color 0.1s linear 0s, background-color 0.1s linear 0s, opacity 0.2s linear 0s !important;
 }
 a:focus,
 a:hover,
 a:active {
-  color: #000; 
+  color: #000;
 }
 a,
 a:focus,
@@ -259,18 +261,18 @@ tt,
 var,
 xmp {
 	-webkit-hyphens: none;
-	-moz-hyphens: none; 
+	-moz-hyphens: none;
 	-ms-hyphens: none;
-	-o-hyphens: none; 
+	-o-hyphens: none;
 	hyphens: none;
 }
 
 pre {
-    white-space: pre-wrap; 
-    white-space: -moz-pre-wrap;  
-    white-space: -pre-wrap;  
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
     white-space: -o-pre-wrap;
-    word-wrap: break-word; 
+    word-wrap: break-word;
 }
 
 input:focus { outline: 0; }
@@ -334,10 +336,10 @@ line breaks are adjacent */
 
 .header .collapse.show ul li, .header .collapsing ul li { padding: 20px 10px; font-size: 1rem; }
 
-.header .collapse.show ul, .header .collapsing ul { 
-  text-align: center; 
-  padding-top: 30px; 
-  padding-bottom: 30px; 
+.header .collapse.show ul, .header .collapsing ul {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
   margin-left: 0;
 }
 
@@ -412,7 +414,7 @@ line breaks are adjacent */
   top: 0; }
 
 .navbar-toggler:not(.collapsed) .hamburger--minus .hamburger-inner::after {
-  bottom: 0; 
+  bottom: 0;
 }
 
 
@@ -422,23 +424,23 @@ line breaks are adjacent */
 
 .btn {
 	font-weight: 700;
-	border: 0px !important; 
-	background: #1a1a1a; 
+	border: 0px !important;
+	background: #1a1a1a;
 	color: #fff;
-	font-size: 0.778rem; 
-	padding: 10px 25px; 
+	font-size: 0.778rem;
+	padding: 10px 25px;
 	border-radius: 0;
-    text-decoration: none;	
+    text-decoration: none;
 	transition: color 0.1s linear 0s, background-color 0.1s linear 0s, opacity 0.2s linear 0s, box-shadow 0.2s ease-in-out !important;
 }
 .btn:hover {
-	background: #000; color:#fff;  
+	background: #000; color:#fff;
 	/* box-shadow:0 4px 8px rgba(0,0,0,0.2);  */
 }
 .btn:focus { outline: 0 !important; color:#fff; }
 
 .btn-rounded {
-	border-radius: 30px; 
+	border-radius: 30px;
 }
 
 /* -------------------------- */
@@ -447,10 +449,10 @@ line breaks are adjacent */
 
 .pagination { clear: both; float: none; width: 100%;  }
 .pagination-centered { margin: 10px auto; text-align: center; }
-ul.pagination { list-style: none; padding: 0; margin: 0; }	
+ul.pagination { list-style: none; padding: 0; margin: 0; }
 ul.pagination li { display: inline; margin: 0 5px; }
 ul.pagination li a {border-radius: 25px; height: 25px; width: 25px; display: inline-block; line-height: 25px; }
-ul.pagination li.current a  { background: #000; color: #fff;  } 
+ul.pagination li.current a  { background: #000; color: #fff;  }
 ul.pagination li a:hover { background: #ccc; color: #fff; }
 ul.pagination li a.next, ul.pagination li a.prev { border-radius: 0; width: auto; padding: 0; }
 ul.pagination li a.next:hover, ul.pagination li a.prev:hover { background: none; color: #000; }
@@ -468,13 +470,13 @@ ul.pagination li a.prev { margin-right: 20px; }
 /* wpcf7 */
 /* -------------------------- */
 
-.wpcf7-response-output { 
-	position: fixed; top: 0; left: 0; width: 100%; 
-	margin: 0 !important; 
-	z-index: 9999; 
+.wpcf7-response-output {
+	position: fixed; top: 0; left: 0; width: 100%;
+	margin: 0 !important;
+	z-index: 9999;
 	background: #000;
 	color: #fff;
-	text-align: center; 
+	text-align: center;
 	border: none !important;
 	font-size: .722rem;
 }
@@ -524,7 +526,7 @@ span.wpcf7-not-valid-tip { font-size: 0.622rem; margin-top: 5px; }
   padding: 5px;
   margin-top: 5px;
   transition: color 0.1s linear 0s, background-color 0.1s linear 0s, opacity 0.2s linear 0s !important;
- 
+
 }
 
 .wpcf7 input[type="text"]:focus,
@@ -551,7 +553,7 @@ span.wpcf7-not-valid-tip { font-size: 0.622rem; margin-top: 5px; }
     min-height: 1em;
     position: relative;
 }
- 
+
 .wpcf7 form.wpcf7-form span.ajax-loader:before {
     content: 'Loading…';
     position: absolute;
@@ -562,7 +564,7 @@ span.wpcf7-not-valid-tip { font-size: 0.622rem; margin-top: 5px; }
     margin-top: -.5em;
     margin-left: -.5em;
 }
- 
+
 .wpcf7 form.wpcf7-form span.ajax-loader:not(:required):before {
     content: '';
     border-radius: 50%;
@@ -575,7 +577,7 @@ span.wpcf7-not-valid-tip { font-size: 0.622rem; margin-top: 5px; }
 @keyframes spinner {
     to {transform: rotate(360deg);}
 }
- 
+
 @-webkit-keyframes spinner {
     to {-webkit-transform: rotate(360deg);}
 }
@@ -597,7 +599,3 @@ span.wpcf7-not-valid-tip { font-size: 0.622rem; margin-top: 5px; }
 /* -------------------------- */
 /* Custom */
 /* -------------------------- */
-
-
-
-

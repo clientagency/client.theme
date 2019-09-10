@@ -1,7 +1,25 @@
 <?php
 
-// disable admin editor
+// disable admin editor, use wp-config if need to
 define( 'DISALLOW_FILE_EDIT', true );
+
+/* videos */
+add_filter('the_content', function($content) {
+	return str_replace(array("<iframe", "</iframe>"), array('<div class="iframe-container"><iframe', "</iframe></div>"), $content);
+});
+
+add_filter('embed_oembed_html', function ($html, $url, $attr, $post_id) {
+	if(strpos($html, 'youtube.com') !== false || strpos($html, 'youtu.be') !== false){
+  		return '<div class="embed-responsive  embed-responsive-16by9">' . $html . '</div>';
+	} else {
+	 return $html;
+	}
+}, 10, 4);
+
+add_filter('embed_oembed_html', function($code) {
+  return str_replace('<iframe', '<iframe class="embed-responsive-item"  ', $code);
+});
+
 
 /*
 add_theme_support('post-formats', array('aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat'));
@@ -27,8 +45,8 @@ function remove_width_attribute( $html ) {
    $html = preg_replace( '/(width|height)="\d*"\s/', "", $html );
    return $html;
 }
-add_filter('post_thumbnail_html', 'remove_width_attribute', 10 ); 
-add_filter('image_send_to_editor', 'remove_width_attribute', 10 ); 
+add_filter('post_thumbnail_html', 'remove_width_attribute', 10 );
+add_filter('image_send_to_editor', 'remove_width_attribute', 10 );
 
 
 /* Change Excerpt length */
@@ -44,7 +62,7 @@ function client_excerpt_readmore() {
 add_filter('excerpt_more', 'client_excerpt_readmore');
 
 // Stop "read more" link jumping part-way down a single post
-function remove_more_jump_link($link) { 
+function remove_more_jump_link($link) {
 	$offset = strpos($link, '#more-');
 	if ($offset) {
 		$end = strpos($link, '"',$offset);
@@ -91,11 +109,11 @@ function add_slug_to_body_class($classes)
 
     return $classes;
 }
-add_filter('body_class', 'add_slug_to_body_class'); 
+add_filter('body_class', 'add_slug_to_body_class');
 
 // mobile to body
 function mobile_body_class( $classes ){
-     
+
         /* using mobile browser */
         if ( wp_is_mobile() ){
             $classes[] = 'wp-is-mobile';
@@ -111,7 +129,7 @@ add_filter('body_class','mobile_body_class');
 if ( ! function_exists( 'client_pagination' ) ) {
 	function client_pagination() {
 		global $wp_query;
-		$big = 999999999; 
+		$big = 999999999;
 		$paginate_links = paginate_links( array(
 			'base' => str_replace( $big, '%#%', get_pagenum_link($big) ),
 			'current' => max( 1, get_query_var('paged') ),
@@ -144,8 +162,8 @@ function custom_pagination($numpages = '', $pagerange = '', $paged='') {
    * This first part of our function is a fallback
    * for custom pagination inside a regular loop that
    * uses the global $paged and global $wp_query variables.
-   * 
-   * Use in custom loops outside archive etc 
+   *
+   * Use in custom loops outside archive etc
    */
   global $paged;
   if (empty($paged)) {
@@ -159,9 +177,9 @@ function custom_pagination($numpages = '', $pagerange = '', $paged='') {
     }
   }
 
-  /** 
+  /**
    * We construct the pagination arguments to enter into our paginate_links
-   * function. 
+   * function.
    */
   $pagination_args = array(
     'base'            => get_pagenum_link(1) . '%_%',

@@ -2,33 +2,41 @@
 
 <main class="navbar-margin">
 
-<div class="container py-5"> 
-	<div class="row">
-    <div class="col-12 col-xl-10 col-centered">
 	  <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
-      <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<?php
+				if ( wp_is_mobile() ) {
+				 $img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large', false, '' );
+				} else {
+				 $img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full', false, '' );
+				}
+			?>
+		<div class="jumbotron jumbotron-fluid d-flex align-items-center rel">
+			<div class="bg" style="background-image: url(<?php echo $img[0]; ?>); "></div>
+			<div class="mask"></div>
+			<div class="container">
+					<div class="row"><div class="col-12 col-lg-10 lead mx-auto text-center text-white">
 
-        <?php
-        if ( wp_is_mobile() ) {
-         $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium', false, '' );	
-        } else {
-         $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large', false, '' );
-        } ?>
+						 <h1 class="m-0"><?php the_title(); ?></h1>
 
-        <div class="single-image mb16">
-          <img src="<?php echo $src[0]; ?>" class="img-fluid">
-        </div>
+					</div></div>
+				</div>
+		</div>
 
+		<div class="container py-5">
+			<div class="row">
+		    <div class="col-12 col-xl-10 col-centered">
 
-        <h1 class="mb-4"><?php the_title(); ?></h1>
+		      <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-        <?php the_content(); ?>
-        
-        <?php // comments_template(); ?>
+		        <h1 class="mb-4"><?php the_title(); ?></h1>
 
-      </article>
-	
+		        <?php the_content(); ?>
+
+		        <?php // comments_template(); ?>
+
+		      </article>
+
   	<?php endwhile; ?>
 
     <?php else: ?>
@@ -40,9 +48,9 @@
       </article>
 
     <?php endif; ?>
-    
+
 	  </div>
-	</div>	
+	</div>
 </div>
 
 </main>
