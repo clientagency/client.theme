@@ -146,6 +146,17 @@ h6
   -webkit-font-smoothing: antialiased;
   color: #000;
   font-weight: 400;
+  hyphens: none;
+}
+
+@media (max-width: 767px) {
+
+  h1 {
+    hyphens: auto;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
 }
 
 
@@ -163,6 +174,10 @@ h2 {
   margin-bottom: 14.85px;
   margin-bottom: 0.825rem;
   text-transform: none;
+
+  hyphens: auto;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 

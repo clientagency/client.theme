@@ -19,8 +19,8 @@
     </div>
 </div>
 
-<div class="container">
-    <div class="row pb24 pt24">
+<div class="container my-5">
+    <div class="row">
 
         <div class="col">
         	<article>
