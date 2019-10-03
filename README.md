@@ -2,7 +2,7 @@
 
 ## Intro
 
-Boilerplate theme for Wordpress using Bootstrap 4. Clear, no fuss code with essential functions in seperate files.
+Boilerplate theme for Wordpress using Bootstrap 4. Clear, no fuss code with essential functions in separate files.
 
 ## Issues
 
