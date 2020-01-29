@@ -1,5 +1,8 @@
 <?php
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 function client_widgets_init() {
 
   	/*
@@ -14,7 +17,7 @@ function client_widgets_init() {
       'before_title' 	=> '<h4>',
       'after_title' 	=> '</h4>',
     ) );
-	
+
 	register_sidebar( array(
       'name' 					=> __( 'Footer2', 'client' ),
       'id' 						=> 'footer-widget-area-2',

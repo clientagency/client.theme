@@ -1,5 +1,8 @@
 <?php
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 require_once get_template_directory() . '/functions/class-wp-bootstrap-navwalker.php';
 
 function register_my_menus() {

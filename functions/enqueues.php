@@ -1,6 +1,9 @@
 <?php
 
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 function client_assets() {
 
 // js
@@ -19,17 +22,10 @@ wp_enqueue_script('script');
 wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css' );
 wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css' );
 wp_enqueue_style( 'ion-icons', get_template_directory_uri() . '/css/ionicons.min.css' );
-//wp_enqueue_style( 'margin', get_template_directory_uri() . '/css/margins.css' );
 wp_enqueue_style( 'custom', get_template_directory_uri() . '/css/custom.css' );
 
 }
 add_action( 'wp_enqueue_scripts', 'client_assets' );
-
-// not using gutenberg?
-function wpassist_remove_block_library_css(){
-    wp_dequeue_style( 'wp-block-library' );
-}
-add_action( 'wp_enqueue_scripts', 'wpassist_remove_block_library_css' );
 
 
 function client_theme_add_map() {

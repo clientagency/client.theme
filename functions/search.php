@@ -1,5 +1,8 @@
 <?php
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 function client_search_form( $form ) {
     $form = '<form role="search" method="get" id="searchform" action="' . home_url('/') . '" >
 			<div class="row collapse widget-search">

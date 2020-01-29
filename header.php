@@ -7,6 +7,9 @@
   <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?>" href="<?php bloginfo('rss2_url'); ?>" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="<?php bloginfo('name'); ?>">
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -34,7 +37,7 @@
                     'container_id'      => 'header-menu',
                     'menu_class'        => 'navbar-nav',
                     'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-	                'walker'            => new WP_Bootstrap_Navwalker()
+	                  'walker'            => new WP_Bootstrap_Navwalker()
 
                 ));
            ?>

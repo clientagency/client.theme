@@ -1,5 +1,8 @@
 <?php
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 // disable admin editor, use wp-config if need to
 define( 'DISALLOW_FILE_EDIT', true );
 
@@ -136,8 +139,8 @@ if ( ! function_exists( 'client_pagination' ) ) {
 			'total' => $wp_query->max_num_pages,
 			'mid_size' => 5,
 			'prev_next' => True,
-			'prev_text' => '<span class="next"><i class="fa fa-angle-left" aria-hidden="true"></i> &nbsp;' . __( 'Older', 'client' ) . '</span> ',
-            'next_text' => '<span class="prev">' . __( 'Newer', 'client' ) . ' &nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i></span> ',
+			'prev_text' => '<span class="prev"><i class="icon ion-android-arrow-back"></i> &nbsp;' . __( 'Back', 'client' ) . '</span> ',
+      'next_text' => '<span class="next">' . __( 'More ', 'client' ) . ' &nbsp; <i class="icon ion-android-arrow-forward"></i></span> ',
 			'type' => 'list'
 		) );
 		$paginate_links = str_replace( "<ul class='page-numbers'>", "<ul class='pagination'>", $paginate_links );

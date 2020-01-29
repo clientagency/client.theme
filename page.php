@@ -33,6 +33,8 @@
     </div>
 </div>
 
+<?php get_template_part( 'page', 'modules' ); ?>
+
 </main>
 <div class="edit-post-link"><?php edit_post_link('<i class="icon ion-edit"></i>', '', ''); ?></div>
 

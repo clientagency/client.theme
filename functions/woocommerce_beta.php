@@ -1,5 +1,8 @@
 <?php
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 add_theme_support( 'woocommerce' );
 
 // Add New Woocommerce 3.0.0 Product Gallery support.

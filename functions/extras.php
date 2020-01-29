@@ -1,5 +1,8 @@
 <?php
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Admin changes
  */
@@ -29,12 +32,12 @@ function custom_login_title() {
 add_filter( 'login_headertitle', 'custom_login_title' );
 
 // Admin footer modification
-function remove_footer_admin () 
+function remove_footer_admin ()
 {
     echo '<span id="footer-thankyou">With &hearts; <a href="https://client.studio" target="_blank">Client Studio</a></span>';
 }
 add_filter('admin_footer_text', 'remove_footer_admin');
-  
-  
+
+
 
 ?>

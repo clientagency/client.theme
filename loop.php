@@ -1,4 +1,4 @@
-<div class="col-12 col-sm-6 col-lg-4 mb-5 post item" id="post-<?php the_ID(); ?>" >
+<div class="col-12 col-sm-6 col-lg-4 mb-5 post item" id="post-<?php the_ID(); ?>">
 
     <div class="post__thumb text-center">
       <a href="<?php the_permalink(); ?>">

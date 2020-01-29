@@ -3,12 +3,21 @@
 <main class="navbar-margin">
 
 <?php if (have_posts()): while (have_posts()) : the_post(); ?>
-<div class="jumbotron jumbotron-fluid d-flex align-items-center">
-  <div class="container"><div class="row"><div class="col">
+  <?php
+    if ( wp_is_mobile() ) {
+     $img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large', false, '' );
+    } else {
+     $img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full', false, '' );
+    }
+  ?>
 
-	  <?php the_content(); ?>
+<div class="jumbotron jumbotron-fluid d-flex align-items-center rel" style="background-image: url(<?php echo $img[0]; ?>); ">
+<div class="container"><div class="row"><div class="col text-center text-white lead z-fix">
 
-  </div></div></div>
+  <?php the_content(); ?>
+
+</div></div></div>
+<div class="mask"></div>
 </div>
 
 <div class="container my-5">
