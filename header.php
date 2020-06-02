@@ -22,11 +22,9 @@
             	<img src="<?php echo esc_url( get_template_directory_uri() ) ?>/img/logo.png" class="img-fluid" alt="<?php bloginfo( 'name' ); ?>">
           </a>
 
-
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header-menu" aria-controls="header-menu" aria-expanded="false" aria-label="Toggle menu">
         	  <span class="navbar-toggler-icon"></span>
       	 </button>
-
 
            <?php
                 wp_nav_menu( array(

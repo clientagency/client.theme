@@ -12,8 +12,11 @@ wp_register_script( 'pace', get_stylesheet_directory_uri() . '/js/pace.js', fals
 wp_register_script( 'bootstrap', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ));
 wp_register_script( 'plugins', get_stylesheet_directory_uri() . '/js/plugins.js', array( 'jquery' ));
 wp_register_script( 'script', get_stylesheet_directory_uri() . '/js/script.js', array( 'jquery' ));
+wp_register_script( 'ionicons', 'https://unpkg.com/ionicons@5.0.0/dist/ionicons.js', false, null, false);
+
 wp_enqueue_script('popper');
 wp_enqueue_script('pace');
+wp_enqueue_script('ionicons');
 wp_enqueue_script('bootstrap');
 wp_enqueue_script('plugins');
 wp_enqueue_script('script');
@@ -21,7 +24,6 @@ wp_enqueue_script('script');
 // css
 wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css' );
 wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css' );
-wp_enqueue_style( 'ion-icons', get_template_directory_uri() . '/css/ionicons.min.css' );
 wp_enqueue_style( 'custom', get_template_directory_uri() . '/css/custom.css' );
 
 }

@@ -6,24 +6,6 @@ defined( 'ABSPATH' ) || exit;
 // disable admin editor, use wp-config if need to
 define( 'DISALLOW_FILE_EDIT', true );
 
-/* videos */
-add_filter('the_content', function($content) {
-	return str_replace(array("<iframe", "</iframe>"), array('<div class="iframe-container"><iframe', "</iframe></div>"), $content);
-});
-
-add_filter('embed_oembed_html', function ($html, $url, $attr, $post_id) {
-	if(strpos($html, 'youtube.com') !== false || strpos($html, 'youtu.be') !== false){
-  		return '<div class="embed-responsive  embed-responsive-16by9">' . $html . '</div>';
-	} else {
-	 return $html;
-	}
-}, 10, 4);
-
-add_filter('embed_oembed_html', function($code) {
-  return str_replace('<iframe', '<iframe class="embed-responsive-item"  ', $code);
-});
-
-
 /*
 add_theme_support('post-formats', array('aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat'));
 */
@@ -32,13 +14,32 @@ function client_setup() {
 	add_theme_support('post-thumbnails');
  	update_option('thumbnail_size_w', 600);
 	update_option('thumbnail_size_h', 480);
-	update_option('medium_size_w', 960);
+	update_option('medium_size_w', 980);
 	update_option('medium_size_h', 0);
-	update_option('large_size_w', 1640);
+	update_option('large_size_w', 1600);
 	update_option('large_size_h', 0);
-    // rss thingy
-    add_theme_support('automatic-feed-links');
-    add_theme_support( 'title-tag' );
+  // rss thingy
+  add_theme_support('automatic-feed-links');
+  //add_theme_support( 'title-tag' );
+
+	/*
+	 * Switch default core markup for search form, comment form, and comments
+	 * to output valid HTML5.
+	 */
+	add_theme_support(
+		'html5',
+		[
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+		]
+	);
+
+	// Registers support for Gutenberg wide images
+	add_theme_support('align-wide');
+
 }
 add_action('init', 'client_setup');
 
@@ -60,7 +61,7 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 /* Change Excerpt format */
 function client_excerpt_readmore() {
-	return '&nbsp; <a href="'. get_permalink() . '" class="read-more">' . '&hellip; ' . __('Read more', 'client') . ' <i class="icon ion-chevron-right" aria-hidden="true"></i>' . '</a>';
+	return '&nbsp; <a href="'. get_permalink() . '" class="read-more">' . '&hellip; ' . __('Read more', 'client') . ' <ion-icon name="chevron-forward-outline"></ion-icon>' . '</a>';
 }
 add_filter('excerpt_more', 'client_excerpt_readmore');
 

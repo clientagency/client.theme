@@ -7,7 +7,6 @@
 		<div class="col text-center">
 			<h2><?php single_cat_title(); ?></h2>
 			<p><?php echo category_description(); ?></p>
-
    		</div>
 	</div>
 </div>

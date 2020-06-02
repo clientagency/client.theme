@@ -2,8 +2,8 @@
 
 	<main role="main">
 		<section class="container">
-			
-    <div class="row pt160 pb160">
+
+    <div class="row my-5 py-5">
         <div class="col-12 text-center">
           <article id="post-404">
 
@@ -15,7 +15,7 @@
           </article>
         </div>
       </div>
-            
+
 		</section>
 	</main>
 

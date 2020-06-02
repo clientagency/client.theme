@@ -1,29 +1,32 @@
 <?php $i = 1; ?>
+
 <?php // get ACF modules using flexible content ?>
+
 <?php if( have_rows('module') ): while ( have_rows('module') ) : the_row(); ?>
 
-        <?php if( get_row_layout() == 'columns' ): ?>
+        <?php if( get_row_layout() == 'feature' ): ?>
 
-            <div class="container py-5"><div class="row">
+             <div class="container-fluid">
+              <div class="row d-flex align-items-center">
 
-                <?php $img = get_sub_field('column-image'); ?>
+                <?php $img = get_sub_field('feature-image'); ?>
                 <?php if( $img ): ?>
-                <div class="col-12 col-md-6 text-center px-2 px-lg-5 mb-5 <?php if($i%2 == 0) : ?>mt-5<?php endif; ?>">
-                    <img src="<?php echo $img['sizes']['medium']; ?>" class="img-fluid shadow" />
+                <div class="col-12 col-md-6 <?php if($i%2 == 0) : ?>md-order-2<?php endif; ?>">
+                    <img src="<?php echo $img['sizes']['medium']; ?>" class="img-fluid" />
                 </div>
                 <?php endif; ?>
 
-
-                <?php if( get_sub_field('column-text') ): ?>
-                <div class="col-12 col-md-6 text-center px-2 px-lg-5 <?php if($i%2 == 0) : ?><?php else : ?>mt-5<?php endif; ?>">
-                    <?php the_sub_field('column-text'); ?>
+                <?php if( get_sub_field('feature-text') ): ?>
+                <div class="col-12 col-md-6 <?php if($i%2 == 0) : ?>md-order-1<?php endif; ?>">
+                    <?php the_sub_field('feature-text'); ?>
                 </div>
                 <?php endif; ?>
 
-            </div></div>
+              </div>
+            </div>
+
         <?php $i++ ?>
         <?php endif; ?>
-
 
         <?php if( get_row_layout() == 'text' ): ?>
 
@@ -47,7 +50,6 @@
           </div>
 
         <?php endif; ?>
-
 
 
 <?php endwhile; endif; ?>

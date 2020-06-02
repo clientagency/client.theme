@@ -36,7 +36,8 @@
 <?php get_template_part( 'page', 'modules' ); ?>
 
 </main>
-<div class="edit-post-link"><?php edit_post_link('<i class="icon ion-edit"></i>', '', ''); ?></div>
+
+<?php edit_post_link( __('<ion-icon name="settings"></ion-icon>'), '', '', 0, 'edit-post-link' ); ?>
 
 <?php endwhile; endif; ?>
 <?php get_footer(); ?>

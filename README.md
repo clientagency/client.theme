@@ -2,11 +2,11 @@
 
 ## Intro
 
-Boilerplate theme for Wordpress using Bootstrap 4. Clear, no fuss code with essential functions in separate files.
+Simple starting theme for Wordpress with Bootstrap 4. Very light boilerplate theme that gets new projects started quick. Made at client.studio
 
 ## Issues
 
-Report issues in github repository [issue tracker](https://github.com/clientagency/client.theme/issues). We are glad for any sort of feedback.
+Report issues in Github repository [issue tracker](https://github.com/clientagency/client.theme/issues). We are glad for any sort of feedback.
 
 ## Contribution
 
