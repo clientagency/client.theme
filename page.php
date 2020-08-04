@@ -37,7 +37,6 @@
 
 </main>
 
-<?php edit_post_link( __('<ion-icon name="settings"></ion-icon>'), '', '', 0, 'edit-post-link' ); ?>
 
 <?php endwhile; endif; ?>
 <?php get_footer(); ?>

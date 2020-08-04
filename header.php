@@ -14,10 +14,10 @@
 </head>
 <body <?php body_class(); ?>>
 
-  <header class="header" data-headroom>
+  <header class="header">
 
     <nav class="navbar navbar-expand-lg navbar-light" role="navigation">
-    	<div class="container">
+    	<div class="container px-0 py-lg-3">
           <a class="navbar-brand" href="<?php echo home_url(); ?>">
             	<img src="<?php echo esc_url( get_template_directory_uri() ) ?>/img/logo.png" class="img-fluid" alt="<?php bloginfo( 'name' ); ?>">
           </a>

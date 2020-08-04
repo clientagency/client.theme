@@ -29,15 +29,27 @@ get_header(); ?>
 
     <div class="col">
     <article>
-      <h1>h1. Title</h1>
+        <h1>h1. Title</h1>
         <h2>h2. Title</h2>
         <h3>h3. Title</h3>
         <h4>h4. Title</h4>
         <h5>h5. Title</h5>
-        <p class="lead">p.lead This is a modified jumbotron that occupies the entire horizontal space of its parent.
-        <p class="lead">
-        <a class="btn btn-rounded btn-primary btn-lg" href="#" role="button">Learn more</a>
-      	</p>
+        <p class="lead">p.lead This is just typography testing content. Please remove this.
+        <p class="lead"> Nulla vitae elit libero, a pharetra augue. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Nulla vitae elit libero, a pharetra augue.
+
+Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas sed diam eget risus varius blandit sit amet non magna. Vestibulum id ligula porta felis euismod semper. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.Nulla vitae elit libero, a pharetra augue. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Nulla vitae elit libero, a pharetra augue.
+
+Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas sed diam eget risus varius blandit sit amet non magna. Vestibulum id ligula porta felis euismod semper. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.Nulla vitae elit libero, a pharetra augue. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Nulla vitae elit libero, a pharetra augue.
+
+Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas sed diam eget risus varius blandit sit amet non magna. Vestibulum id ligula porta felis euismod semper. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.Nulla vitae elit libero, a pharetra augue. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Nulla vitae elit libero, a pharetra augue.
+
+Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas sed diam eget risus varius blandit sit amet non magna. Vestibulum id ligula porta felis euismod semper. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.Nulla vitae elit libero, a pharetra augue. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Nulla vitae elit libero, a pharetra augue.
+
+Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas sed diam eget risus varius blandit sit amet non magna. Vestibulum id ligula porta felis euismod semper. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+</p>
+
+        <a class="btn btn-rounded btn-primary" href="#" role="button">Learn more</a>
+
 
     </article>
     </div>
@@ -45,8 +57,9 @@ get_header(); ?>
   </div>
 </div>
 
+<?php get_template_part( 'page', 'modules' ); ?>
+
 </main>
 
 <?php endwhile; endif; ?>
-<?php edit_post_link( __('<ion-icon name="settings"></ion-icon>'), '', '', 0, 'edit-post-link' ); ?>
 <?php get_footer(); ?>

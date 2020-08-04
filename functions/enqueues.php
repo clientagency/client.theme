@@ -1,8 +1,16 @@
 <?php
-
-
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
+
+
+//Remove Gutenberg Block Library CSS from loading on the frontend
+function smartwp_remove_wp_block_library_css(){
+ wp_dequeue_style( 'wp-block-library' );
+ wp_dequeue_style( 'wp-block-library-theme' );
+ wp_dequeue_style( 'wc-block-style' ); // Remove WooCommerce block CSS
+}
+add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100 );
+
 
 function client_assets() {
 
@@ -12,7 +20,7 @@ wp_register_script( 'pace', get_stylesheet_directory_uri() . '/js/pace.js', fals
 wp_register_script( 'bootstrap', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ));
 wp_register_script( 'plugins', get_stylesheet_directory_uri() . '/js/plugins.js', array( 'jquery' ));
 wp_register_script( 'script', get_stylesheet_directory_uri() . '/js/script.js', array( 'jquery' ));
-wp_register_script( 'ionicons', 'https://unpkg.com/ionicons@5.0.0/dist/ionicons.js', false, null, false);
+wp_register_script( 'ionicons', 'https://unpkg.com/ionicons@5.1.2/dist/ionicons.js', false, null, false);
 
 wp_enqueue_script('popper');
 wp_enqueue_script('pace');

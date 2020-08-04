@@ -11,6 +11,7 @@ add_theme_support('post-formats', array('aside', 'gallery', 'link', 'image', 'qu
 */
 
 function client_setup() {
+	// setup image sizes
 	add_theme_support('post-thumbnails');
  	update_option('thumbnail_size_w', 600);
 	update_option('thumbnail_size_h', 480);

@@ -12,16 +12,11 @@
 		  </div>
 
    	</div>
-  </div>
 
-</footer>
-
-<div class="copyright">
-  <div class="container">
-      <div class="row">
+    <div class="row copyright py-2">
         <div class="col">
           <p>
-          &copy; <?php echo date('Y');?> <?php bloginfo( 'name' ); ?> All rights reserved.
+          &copy; <?php echo date('Y');?> <?php bloginfo( 'name' ); ?>. All rights reserved.
           </p>
         </div>
         <div class="col text-right">
@@ -33,6 +28,12 @@
       </div>
     </div>
 </div>
+
+</footer>
+
+
+<?php edit_post_link( __('<ion-icon name="settings-outline"></ion-icon>'), '', '', 0, 'edit-post-link' ); ?>
+
 
 <?php wp_footer(); ?>
 
