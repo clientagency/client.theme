@@ -80,13 +80,20 @@ html, body {
 	margin: 0; padding: 0;
 }
 
-.jumbotron { margin: 0; padding: 0; border: 0; border-radius: 0; background-color: #ccc; min-height: 480px;}
+.jumbotron {
+  margin: 0; padding: 0; border: 0; border-radius: 0;
+  background-color: var(--dark) !important;
+  background-position: center center; background-size: cover;
+  min-height: 480px;
+ }
 
 .debug { background: #ff0000; }
 
 .rel { position: relative; }
 
 .mask { background: rgba(0,0,0,.4); position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+.z-fix { position: relative; z-index: 9; }
 
 /* -------------------------- */
 /* Typo */
@@ -123,7 +130,7 @@ h6
   -webkit-font-smoothing: antialiased;
   color: var(--dark) !important;
   font-family: var(--font-family-heading);
-  font-weight: 400;
+  font-weight: 500;
   hyphens: none;
 }
 
@@ -132,6 +139,7 @@ h1 {
   font-size: 3rem;
   margin-bottom: 14.85px;
   margin-bottom: 0.825rem;
+
 }
 
 
@@ -154,10 +162,10 @@ h2 {
 
 h3 {
   font-size: 21px;
-  font-size: 1.44rem;
+  font-size: 1.5rem;
   margin-bottom: 11.1375px;
   margin-bottom: 0.71875rem;
-  font-weight: 500;
+
 }
 
 h4 {
@@ -170,7 +178,7 @@ h4 {
 
 h5, h6 {
   font-size: 15px;
-  font-size: 0.833rem;
+  font-size: 1.2rem;
   margin-bottom: 11.1375px;
   margin-bottom: 0.61875rem;
 
@@ -197,7 +205,7 @@ article p {
 line-height: 1.5;
 }
 
-p.large, p.lead { font-size: 1rem;}
+p.large, p.lead { font-size: 1.1rem; font-weight: normal; }
 
 .footer p, .footer ul, .footer ol { font-size: 0.766rem; }
 
@@ -228,6 +236,8 @@ article a { text-decoration: underline; }
 .italic, em, i { font-style: italic; }
 
 .caps { text-transform: uppercase; }
+
+.text-white * { color: #fff !important;}
 
 input,
 aabbr,

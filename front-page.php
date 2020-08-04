@@ -35,7 +35,7 @@ get_header(); ?>
         <h4>h4. Title</h4>
         <h5>h5. Title</h5>
         <p class="lead">p.lead This is just typography testing content. Please remove this.
-        <p class="lead"> Nulla vitae elit libero, a pharetra augue. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Nulla vitae elit libero, a pharetra augue.
+        <p> Nulla vitae elit libero, a pharetra augue. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Nulla vitae elit libero, a pharetra augue.
 
 Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas sed diam eget risus varius blandit sit amet non magna. Vestibulum id ligula porta felis euismod semper. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.Nulla vitae elit libero, a pharetra augue. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Nulla vitae elit libero, a pharetra augue.
 
@@ -49,7 +49,6 @@ Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas sed diam eget ris
 </p>
 
         <a class="btn btn-rounded btn-primary" href="#" role="button">Learn more</a>
-
 
     </article>
     </div>

@@ -12,7 +12,7 @@
 </div>
 
 <?php if ( have_posts() ) : ?>
-<div class="container-fluid">
+<div class="container">
 	<div class="row masonry">
 
 	<?php while ( have_posts() ) : the_post(); ?>

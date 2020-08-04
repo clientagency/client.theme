@@ -62,7 +62,7 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 /* Change Excerpt format */
 function client_excerpt_readmore() {
-	return '&nbsp; <a href="'. get_permalink() . '" class="read-more">' . '&hellip; ' . __('Read more', 'client') . ' <ion-icon name="chevron-forward-outline"></ion-icon>' . '</a>';
+	return '&hellip;  <a href="'. get_permalink() . '" class="read-more-link d-block mt-3">' . '' . __('Read more', 'client') . ' <ion-icon name="arrow-forward-outline"></ion-icon>' . '</a>';
 }
 add_filter('excerpt_more', 'client_excerpt_readmore');
 

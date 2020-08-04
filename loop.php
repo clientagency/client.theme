@@ -2,7 +2,7 @@
 
     <div class="post__thumb text-center">
       <a href="<?php the_permalink(); ?>">
-      <?php the_post_thumbnail( 'thumbnail', array( 'class' => 'img-fluid' ) ); ?>
+      <?php the_post_thumbnail( 'thumbnail', array( 'class' => 'img-fluid rounded' ) ); ?>
       </a>
     </div>
 

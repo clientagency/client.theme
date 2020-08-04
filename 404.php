@@ -9,7 +9,7 @@
 
             <h1><?php _e( 'Page missing', 'client' ); ?></h1>
             <p>
-              <a href="<?php echo home_url(); ?>"><?php _e( 'Return to frontpage', 'client' ); ?></a>
+              <a class="btn btn-primary btn-rounded" href="<?php echo home_url(); ?>"><?php _e( 'Go home', 'client' ); ?></a>
             </p>
 
           </article>
