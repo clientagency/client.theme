@@ -2,11 +2,7 @@
 
 ## Intro
 
-Groundwork for Wordpress + Bootstrap 4 made by Client.Studio
-
-• Modules / Blocks for ACF
-• Simple and clear functions
-
+Groundwork for Wordpress custom themes • Bootstrap 4 • Blocks with ACF • Clear functions • Made by Client.Studio
 
 ## Issues
 
