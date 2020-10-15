@@ -4,6 +4,10 @@
 
 Groundwork for Wordpress + Bootstrap 4 made by Client.Studio
 
+• Modules / Blocks for ACF
+• Simple and clear functions
+
+
 ## Issues
 
 Please report issues in Github repository [issue tracker](https://github.com/clientagency/client.theme/issues)
