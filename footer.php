@@ -12,7 +12,6 @@
 		  </div>
 
    	</div>
-
     <div class="row copyright py-2">
         <div class="col">
           <p>
@@ -31,9 +30,7 @@
 
 </footer>
 
-
 <?php edit_post_link( __('<ion-icon name="settings-outline"></ion-icon>'), '', '', 0, 'edit-post-link' ); ?>
-
 
 <?php wp_footer(); ?>
 

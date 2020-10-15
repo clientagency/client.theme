@@ -34,7 +34,7 @@
 }
 
 .pace .pace-progress {
-  background: #010101;
+  background-color: var(--primary);
   position: fixed;
   z-index: 200000;
   top: 0;
@@ -56,6 +56,17 @@ body:not(.pace-done) > :not(.pace),body:not(.pace-done):before,body:not(.pace-do
 /* -------------------------- */
 /* Additions */
 /* -------------------------- */
+
+img[data-lazy-src] {
+   opacity: 0;
+}
+
+img.lazyloaded {
+  -webkit-transition: opacity .25s linear 0.2s;
+  -moz-transition: opacity .25s linear 0.2s;
+  transition: opacity .25s linear 0.2s;
+  opacity: 1;
+}
 
 body, html { height: 100%; min-height: 100%; width: 100%;}
 
@@ -315,7 +326,7 @@ line breaks are adjacent */
 
 .navbar-brand img { max-width: 120px; height: auto; }
 
-.navbar-light { background: #fff; }
+.navbar-dark { background: var(--dark) !important; }
 
 .header .navbar-nav li a { font-size: .899rem; font-weight: 600; }
 

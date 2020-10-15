@@ -17,9 +17,7 @@ get_header(); ?>
 
 <div class="jumbotron jumbotron-fluid d-flex align-items-center rel" style="background-image: url(<?php echo $img[0]; ?>); ">
 <div class="container"><div class="row"><div class="col text-center text-white lead z-fix">
-
   <?php the_content(); ?>
-
 </div></div></div>
 <div class="mask"></div>
 </div>

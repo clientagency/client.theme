@@ -3,7 +3,6 @@
 <main class="navbar-margin">
 
 <?php if (have_posts()): while (have_posts()) : the_post(); ?>
-
   <?php
     if ( wp_is_mobile() ) {
      $img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large', false, '' );
@@ -21,22 +20,17 @@
 
 <div class="container my-5">
     <div class="row">
-
         <div class="col">
         	<article>
-
             <?php the_content(); ?>
-
 			    </article>
          </div>
-
     </div>
 </div>
 
 <?php get_template_part( 'page', 'modules' ); ?>
 
 </main>
-
 
 <?php endwhile; endif; ?>
 <?php get_footer(); ?>

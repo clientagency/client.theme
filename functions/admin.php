@@ -34,10 +34,18 @@ add_filter( 'login_headertitle', 'custom_login_title' );
 // Admin footer modification
 function remove_footer_admin ()
 {
-    echo '<span id="footer-thankyou">With &hearts; <a href="https://client.studio" target="_blank">Client Studio</a></span>';
+    echo '<span id="footer-thankyou">Made by <a href="https://client.studio" target="_blank">Client.Studio</a></span>';
 }
 add_filter('admin_footer_text', 'remove_footer_admin');
 
-
+add_action('admin_head', 'admin_custom_css');
+function admin_custom_css() {
+  echo '<style>
+    a.acf-button.button-primary[data-name="add-layout"] {
+        background: #19803E !important; border: 0;
+        font-size: 120%;
+    }
+  </style>';
+}
 
 ?>
