@@ -2,15 +2,19 @@
 
 ## Intro
 
-Simple starting theme for Wordpress with Bootstrap 4. Very light boilerplate theme that gets new projects started quick. Made at client.studio
+Groundwork for Wordpress + Bootstrap 4 made by Client.Studio
+
+• Modules / Blocks for ACF
+• Simple and clear functions
+
 
 ## Issues
 
-Report issues in Github repository [issue tracker](https://github.com/clientagency/client.theme/issues). We are glad for any sort of feedback.
+Please report issues in Github repository [issue tracker](https://github.com/clientagency/client.theme/issues)
 
-## Contribution
+## License
 
-Feel free to make pull request or report issues.
+Feel free to use this for any commercial or personal project
 
 ## License
 
