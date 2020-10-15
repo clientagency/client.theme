@@ -2,7 +2,7 @@
 
 ## Intro
 
-Light as air boilerplate theme for Wordpress + Bootstrap 4 made by Client.Studio
+Groundwork for Wordpress + Bootstrap 4 made by Client.Studio
 
 ## Issues
 
